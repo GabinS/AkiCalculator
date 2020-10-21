@@ -22,18 +22,17 @@ public class TestDivision {
 	}
 	
 	@Test
-	public void testApplyByZero() {		
-	     float result = this.division.apply(0);
-	     
-	     Assert.assertEquals(12.0f, result, 0.0f);
+	public void testApplyByZero() {
+		final float result = this.division.apply(0);
+
+		Assert.assertEquals(12.0f, result, 0.0f);
 	}
 
 	@Test
-	public void testApply() {
-		
-	     float result = this.division.apply(3);
+	public void testApply() {		
+		final float result = this.division.apply(3);
 	     
-	     Assert.assertEquals(4.0f, result, 0.0f);
+		Assert.assertEquals(4.0f, result, 0.0f);
 	}
 	
 

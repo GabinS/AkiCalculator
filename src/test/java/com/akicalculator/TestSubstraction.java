@@ -37,7 +37,7 @@ public class TestSubstraction {
      */
 	@Test
     public void testApply() {
-        float result = this.substract.apply(3);
+        final float result = this.substract.apply(3);
         Assert.assertEquals(2.0f, result, 0.0f);
 
     }

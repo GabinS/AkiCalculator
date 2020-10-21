@@ -48,6 +48,7 @@ public class NavigationUtils {
 				System.out.println("\nSoustraction");
 			    validMenu = true;
 				execSubstraction();
+				break;
 			case "3":
 				System.out.println("\nMultiplication");
 			    validMenu = true;
@@ -77,9 +78,9 @@ public class NavigationUtils {
 	 */
 	public static void execAddition() {
 		System.out.print("a = ");
-		float valueA = SCAN.nextFloat();
+		final float valueA = SCAN.nextFloat();
 		System.out.print("b = ");
-		float valueB = SCAN.nextFloat();
+		final float valueB = SCAN.nextFloat();
 		
 		Addition add = new Addition(valueA);
 		final float result = add.apply(valueB);
@@ -94,9 +95,9 @@ public class NavigationUtils {
 	 */
 	public static void execSubstraction() {
 		System.out.print("a = ");
-		float valueA = SCAN.nextFloat();
+		final float valueA = SCAN.nextFloat();
 		System.out.print("b = ");
-		float valueB = SCAN.nextFloat();
+		final float valueB = SCAN.nextFloat();
 		
 		Substraction add = new Substraction(valueA);
 		final float result = add.apply(valueB);
@@ -111,9 +112,9 @@ public class NavigationUtils {
 	 */
 	public static void execMultiplication()	{
 		System.out.print("a = ");
-		float valueA = SCAN.nextFloat();
+		final float valueA = SCAN.nextFloat();
 		System.out.print("b = ");
-		float valueB = SCAN.nextFloat();
+		final float valueB = SCAN.nextFloat();
 		
 		Multiplication multi = new Multiplication(valueA);
 		float result = multi.apply(valueB);
@@ -127,9 +128,9 @@ public class NavigationUtils {
 	 */
 	public static void execDivision()	{
 		System.out.print("a = ");
-		float valueA = SCAN.nextFloat();
+		final float valueA = SCAN.nextFloat();
 		System.out.print("b = ");
-		float valueB = SCAN.nextFloat();		
+		final float valueB = SCAN.nextFloat();
 
 		Division division = new Division(valueA);
 		float result = division.apply(valueB);
