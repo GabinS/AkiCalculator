@@ -4,7 +4,8 @@ package com.akicalculator.models;
  * Substraction class.
  *
  */
-public class Substraction {
+public class Substraction 
+{
 	
 	/**
 	 * Value to substract.
