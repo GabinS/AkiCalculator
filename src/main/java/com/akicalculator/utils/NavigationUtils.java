@@ -3,6 +3,7 @@ package com.akicalculator.utils;
 import java.util.Scanner;
 
 import com.akicalculator.models.Addition;
+import com.akicalculator.models.Multiplication;
 
 public class NavigationUtils {
 
@@ -15,6 +16,7 @@ public class NavigationUtils {
 	    System.out.println("|      AkiCalculator       |");
 	    System.out.println("| Opération:               |");
 	    System.out.println("|    [1] Addition          |");
+	    System.out.println("|    [3] Multiplication    |");
 	    System.out.println("|[E] Exit                  |");
 	}
 	
@@ -34,6 +36,10 @@ public class NavigationUtils {
 			case "1":
 				System.out.println("Addition");
 				execAddition();
+				break;
+			case "3":
+				System.out.println("Multiplication");
+				execMultiplication();
 				break;
 			case "E":
 				System.exit(0);
@@ -64,5 +70,24 @@ public class NavigationUtils {
 		
 		System.out.println(String.valueOf(a) + " + " + String.valueOf(b) + " = " + String.valueOf(result));
 		
+	}
+	
+	/**
+	 *  Launch Multiplication navigation
+	 */
+	public static void execMultiplication()	{
+		
+		float a = 0;
+		float b = 0;
+		
+		System.out.println("a = ");
+		a = scan.nextFloat();
+		System.out.println("b = ");
+		b = scan.nextFloat();
+		
+		Multiplication multi = new Multiplication(a);
+		float result = multi.apply(b);
+		
+		System.out.println(String.valueOf(a) + " + " + String.valueOf(b) + " = " + String.valueOf(result));
 	}
 }
