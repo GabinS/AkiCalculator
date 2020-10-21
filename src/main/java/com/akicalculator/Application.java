@@ -10,7 +10,7 @@ public class Application {
 	/**
      * Entry-point of application.
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         while (true) {
         	System.out.flush();
         	NavigationUtils.printMenu();

@@ -8,17 +8,17 @@ public class Addition {
 	/**
 	 * Current value
 	 */
-    private float value;
+    private transient float value;
     /**
      * Value to add at current
      */
-    private float addValue;
+    private transient float addValue;
 
     /**
      * Default Constructor.
      * @param a the current value.
      */
-    public Addition(float a) {
+    public Addition(final float a) {
         this.value = a;
     }
 
@@ -27,7 +27,7 @@ public class Addition {
      * @param b value to add at current.
      * @return the result of addition.
      */
-    public float apply(float b) {
+    public float apply(final float b) {
         this.addValue = b;
 
         this.value += this.addValue;

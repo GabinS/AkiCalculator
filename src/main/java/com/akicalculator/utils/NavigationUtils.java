@@ -54,17 +54,16 @@ public class NavigationUtils {
 	 * Launch Addition navigation
 	 */
 	public static void execAddition() {
-		float a = 0;
-		float b = 0;
 		System.out.print("a = ");
-		a = SCAN.nextFloat();
+		float a = SCAN.nextFloat();
 		System.out.print("b = ");
-		b = SCAN.nextFloat();
+		float b = SCAN.nextFloat();
 		
 		Addition add = new Addition(a);
 		float result = add.apply(b);
 		
-		System.out.println(String.valueOf(a) + " + " + String.valueOf(b) + " = " + String.valueOf(result) + "\n");
+		String msg = a + " + " + b + " = " + result + "\n";
+		System.out.println(msg);
 		
 	}
 }

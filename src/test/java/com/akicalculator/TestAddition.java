@@ -35,7 +35,7 @@ public class TestAddition {
 
     @Test
     public void testApply() {
-        float result = this.add.apply(4);
+    	final float result = this.add.apply(4);
 
         Assert.assertEquals(7.0f, result, 0.0f);
     }
