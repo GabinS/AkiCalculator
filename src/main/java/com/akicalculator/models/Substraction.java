@@ -5,16 +5,16 @@ package com.akicalculator.models;
  *
  */
 public class Substraction extends Operation {
-	
-	/**
-	 * Default Constructor.
-	 * @param value : first value of the substraction.
-	 */
+
+    /**
+     * Default Constructor.
+     * @param value : first value of the substraction.
+     */
     public Substraction(final float value) {
         super(value);
     }
-  
-	/**
+
+    /**
      * Apply substraction.
      * @param substractValue value to operate.
      * @return the new value after command.

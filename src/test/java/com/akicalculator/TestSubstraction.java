@@ -12,13 +12,13 @@ import com.akicalculator.models.Substraction;
  *
  */
 public class TestSubstraction {
-	
-	/**
-	 * The substraction to test.
-	 */
+
+    /**
+     * The substraction to test.
+     */
     private Substraction substract;
 
-    
+
     /**
      * Init the value to substract.
      * @throws Exception
@@ -35,7 +35,7 @@ public class TestSubstraction {
     /**
      * Apply the substract command.
      */
-	@Test
+    @Test
     public void testApply() {
         final float result = this.substract.apply(3);
         Assert.assertEquals(2.0f, result, 0.0f);

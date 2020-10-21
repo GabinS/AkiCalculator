@@ -5,15 +5,15 @@ package com.akicalculator.models;
  */
 public class Operation {
 
-	/**
-	 * Current value
-	 */
+    /**
+     * Current value
+     */
     protected transient float value;
-	/**
-	 * operation value
-	 */
+    /**
+     * operation value
+     */
     protected transient float operationValue;
-    
+
     /**
      * Default Constructor.
      * @param value the current value.
