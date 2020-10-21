@@ -13,6 +13,7 @@ plugins {
     id 'idea'
     id 'pmd'
     id "com.github.spotbugs" version "4.5.1"
+    id "de.aaschmid.cpd" version "3.1"
 }
 
 dependencies {
@@ -30,11 +31,17 @@ test {
 	ignoreFailures = true
 }
 
+javadoc{
+	failOnError = false
+}
+
 pmd {
     consoleOutput = true
     toolVersion = "6.21.0"
     rulePriority = 5
     ignoreFailures = true
+    //ignoreJUnitCompletely = true
+    sourceSets = [sourceSets.main]
     ruleSets = [
       "category/java/codestyle.xml",
       "category/java/design.xml",
@@ -50,4 +57,9 @@ spotbugs {
     ignoreFailures = true
     showStackTraces = false
     showProgress = false
+}
+
+cpd{
+	ignoreFailures = true
+	minimumTokenCount = 10
 }
