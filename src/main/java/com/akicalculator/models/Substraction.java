@@ -11,10 +11,10 @@ public class Substraction {
 	
 	/***
 	 * 
-	 * @param a : first value of the substraction.
+	 * @param value : first value of the substraction.
 	 */
-    public Substraction(float a) {
-        this.value = a;
+    public Substraction(float value) {
+        this.value = value;
     }
 
     /**
@@ -22,8 +22,8 @@ public class Substraction {
      * @param b value to operate.
      * @return the new value after command.
      */
-    public float apply(float b) {
-        this.substractValue = b;
+    public float apply(float substractValue) {
+        this.substractValue = substractValue;
         this.value -= this.substractValue;
         return this.value;
     }
@@ -33,8 +33,8 @@ public class Substraction {
      * @param b value to operate.
      * @return the value before command.
      */
-	public float undo(float b) {
-		this.substractValue = b;
+	public float undo(float substractValue) {
+		this.substractValue = substractValue;
         this.value += this.substractValue;
         return this.value;
 	}
