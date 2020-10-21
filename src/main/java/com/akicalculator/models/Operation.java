@@ -9,6 +9,10 @@ public class Operation {
 	 * Current value
 	 */
     protected transient float value;
+	/**
+	 * operation value
+	 */
+    protected transient float operationValue;
     
     /**
      * Default Constructor.
