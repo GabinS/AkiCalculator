@@ -19,7 +19,7 @@ public class Multiplication {
 	    
 	    /**
 	     * 
-	     * @param a value obtained from console
+	     * @param value value obtained from console
 	     */
 	    public Multiplication(final float value) {
 	        this.value = value;
@@ -27,7 +27,7 @@ public class Multiplication {
 
 	    /**
 	     * 
-	     * @param b value obtain from console
+	     * @param multiValue value obtain from console
 	     * @return the multiplication of b and a
 	     */
 	    public float apply(final float multiValue) {
