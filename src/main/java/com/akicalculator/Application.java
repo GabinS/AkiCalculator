@@ -3,13 +3,14 @@ package com.akicalculator;
 import com.akicalculator.utils.NavigationUtils;
 
 /**
- * Main application class.
- *
+ * Main Application class.
  */
 public class Application {
-	
-
-    public static void main(String[] args) {
+    
+	/**
+     * Entry-point of application.
+     */
+    public static void main(final String[] args) {
         while (true) {
         	System.out.flush();
         	NavigationUtils.printMenu();
