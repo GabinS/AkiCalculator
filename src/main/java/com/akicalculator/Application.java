@@ -1,9 +1,18 @@
 package com.akicalculator;
 
+import com.akicalculator.utils.NavigationUtils;
+
 public class Application {
+	
 
     public static void main(String[] args) {
-        System.out.println("Hello World !");
-    }
-
+        while (true) {
+        	System.out.flush();
+        	NavigationUtils.printMenu();
+        	NavigationUtils.selectMenu();
+		}
+    } 
+    
+    
+	
 }
