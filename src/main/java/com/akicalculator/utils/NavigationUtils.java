@@ -4,9 +4,12 @@ import java.util.Scanner;
 
 import com.akicalculator.models.Addition;
 
+/**
+ * Navigation for menu
+ */
 public class NavigationUtils {
 
-	public static final Scanner scan = new Scanner(System.in);
+	public static final Scanner SCAN = new Scanner(System.in);
 	
 	/**
 	 * Display menu in console
@@ -18,29 +21,28 @@ public class NavigationUtils {
 	    System.out.println("|[E] Exit                  |");
 	}
 	
-	
 	/**
 	 * Select action in menu
 	 */
 	public static void selectMenu() {
-		String menuSelected = null;
 		Boolean validMenu = false;
 		while(!validMenu) {
-		    System.out.println("Choix du menu : ");
-		    menuSelected = scan.nextLine();
+		    System.out.print("Choix du menu : ");
+		    String menuSelected = SCAN.nextLine();
 		    validMenu = true;
 		    
 		    switch (menuSelected) {
 			case "1":
-				System.out.println("Addition");
+				System.out.println("\nAddition");
 				execAddition();
 				break;
 			case "E":
+				System.out.println("\nVous avez quittez l'application !");
 				System.exit(0);
 				break;
 
 			default:
-				System.out.println("Choix du menu invalide !");
+				System.out.println("\nChoix du menu invalide !");
 				validMenu = false;
 				break;
 			}
@@ -54,15 +56,15 @@ public class NavigationUtils {
 	public static void execAddition() {
 		float a = 0;
 		float b = 0;
-		System.out.println("a = ");
-		a = scan.nextFloat();
-		System.out.println("b = ");
-		b = scan.nextFloat();
+		System.out.print("a = ");
+		a = SCAN.nextFloat();
+		System.out.print("b = ");
+		b = SCAN.nextFloat();
 		
 		Addition add = new Addition(a);
 		float result = add.apply(b);
 		
-		System.out.println(String.valueOf(a) + " + " + String.valueOf(b) + " = " + String.valueOf(result));
+		System.out.println(String.valueOf(a) + " + " + String.valueOf(b) + " = " + String.valueOf(result) + "\n");
 		
 	}
 }
