@@ -1,15 +1,15 @@
 package com.akicalculator.models;
 
 /**
- * Addition
+ * Division
  */
-public class Addition extends Operation {
+public class Division extends Operation {
 
     /**
      * Default Constructor.
      * @param a the current value.
      */
-    public Addition(final float value) {
+    public Division(final float value) {
         super(value);
     }
 
@@ -18,8 +18,10 @@ public class Addition extends Operation {
      * @param addValue the value to add at current.
      * @return the result of addition.
      */
-    public float apply(final float addValue) {
-        this.value += addValue;
+    public float apply(final float divisionValue) {
+    	if (0.0f != divisionValue) {
+            this.value /= divisionValue;
+		}
         return this.value;
     }
 }

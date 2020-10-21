@@ -1,7 +1,5 @@
 package com.akicalculator;
 
-import static org.junit.Assert.*;
-
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -39,19 +37,9 @@ public class TestSubstraction {
      */
 	@Test
     public void testApply() {
-        float result = this.substract.apply(3);
+        final float result = this.substract.apply(3);
         Assert.assertEquals(2.0f, result, 0.0f);
 
     }
-
-	/**
-	 * Rollback the substract command.
-	 */
-    @Test
-    public void testUndo() {
-        float result = this.substract.undo(3);
-        Assert.assertEquals(8.0f, result, 0.0f);
-    }
-
 
 }
