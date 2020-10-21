@@ -13,6 +13,7 @@ plugins {
     id 'idea'
     id 'pmd'
     id "com.github.spotbugs" version "4.5.1"
+    id "de.aaschmid.cpd" version "3.1"
 }
 
 dependencies {
@@ -50,4 +51,9 @@ spotbugs {
     ignoreFailures = true
     showStackTraces = false
     showProgress = false
+}
+
+cpd{
+	ignoreFailures = true
+	minimumTokenCount = 3
 }
