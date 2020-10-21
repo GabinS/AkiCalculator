@@ -7,22 +7,22 @@ package com.akicalculator.models;
  */
 public class Multiplication {
 		
-		/*
+		/**
 		 * Current value
 		 */
-	    private float value;
+	    private transient float  value;
 	    
-	    /*
+	    /**
 	     * Value to multiplicatee to current
 	     */
-	    private float multiValue;
+	    private transient float multiValue;
 	    
 	    /**
 	     * 
 	     * @param a value obtained from console
 	     */
-	    public Multiplication(final float a) {
-	        this.value = a;
+	    public Multiplication(final float value) {
+	        this.value = value;
 	    }
 
 	    /**
@@ -30,8 +30,8 @@ public class Multiplication {
 	     * @param b value obtain from console
 	     * @return the multiplication of b and a
 	     */
-	    public float apply(final float b) {
-	        this.multiValue = b;
+	    public float apply(final float multiValue) {
+	        this.multiValue = multiValue;
 
 	        this.value *= this.multiValue;
 	        return this.value;

@@ -68,7 +68,7 @@ public class NavigationUtils {
 		Addition add = new Addition(a);
 		float result = add.apply(b);
 		
-		System.out.println(String.valueOf(a) + " + " + String.valueOf(b) + " = " + String.valueOf(result));
+		System.out.println(String.valueOf(a) + " x " + String.valueOf(b) + " = " + String.valueOf(result));
 		
 	}
 	
