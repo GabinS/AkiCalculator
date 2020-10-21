@@ -2,6 +2,10 @@ package com.akicalculator;
 
 import com.akicalculator.utils.NavigationUtils;
 
+/**
+ * Main application class.
+ *
+ */
 public class Application {
 	
 
