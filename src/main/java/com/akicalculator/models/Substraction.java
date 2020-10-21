@@ -9,60 +9,27 @@ public class Substraction {
 	/**
 	 * Value to substract.
 	 */
-	private float value;
+	private transient float value;
 	/**
 	 * Value to operate.
 	 */
-	private float substractValue;
+	private transient float substractValue;
 	
 	/***
 	 * 
 	 * @param value : first value of the substraction.
 	 */
-    public Substraction(float value) {
+    public Substraction(final float value) {
         this.value = value;
     }
         
-    /**
-     * Get the value to substract.
-     * @return the value to substract.
-     */
-    public float getValue() {
-		return value;
-	}
-    
-    /**
-     * Get the value to operate.
-     * @return the substract value
-     */
-	public float getSubstractValue() {
-		return substractValue;
-	}
-
-	/**
-	 * Set  the value to substract.
-	 * @param value to substract.
-	 */
-	public void setValue(float value) {
-		this.value = value;
-	}
-
-	/**
-	 * Set the value to operate.
-	 * @param substractValue : the substract value.
-	 */
-	public void setSubstractValue(float substractValue) {
-		this.substractValue = substractValue;
-	}
-
-
-
+  
 	/**
      * Apply command.
      * @param b value to operate.
      * @return the new value after command.
      */
-    public float apply(float substractValue) {
+    public float apply(final float substractValue) {
         this.substractValue = substractValue;
         this.value -= this.substractValue;
         return this.value;
@@ -73,12 +40,10 @@ public class Substraction {
      * @param b value to operate.
      * @return the value before command.
      */
-	public float undo(float substractValue) {
+	public float undo(final float substractValue) {
 		this.substractValue = substractValue;
         this.value += this.substractValue;
         return this.value;
-	}
-
-	
+	}	
 
 }

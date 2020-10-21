@@ -17,9 +17,9 @@ public class NavigationUtils {
 	 */
 	public static void printMenu () {
 	    System.out.println("|      AkiCalculator       |");
-	    System.out.println("| Opération:               |");
+	    System.out.println("| OpÃ©ration:               |");
 	    System.out.println("|    [1] Addition          |");
-	    System.out.println("|    [2] Substraction      |");
+	    System.out.println("|    [2] Soustraction      |");
 	    System.out.println("|[E] Exit                  |");
 	}
 	
@@ -39,7 +39,7 @@ public class NavigationUtils {
 				execAddition();
 				break;
 			case "2":
-				System.out.println("Substraction");
+				System.out.println("Soustraction");
 				execSubstraction();
 				break;
 			case "E":
