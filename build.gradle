@@ -36,6 +36,8 @@ pmd {
     toolVersion = "6.21.0"
     rulePriority = 5
     ignoreFailures = true
+    //ignoreJUnitCompletely = true
+    sourceSets = [sourceSets.main]
     ruleSets = [
       "category/java/codestyle.xml",
       "category/java/design.xml",
