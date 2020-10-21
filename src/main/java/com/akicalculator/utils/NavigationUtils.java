@@ -29,21 +29,21 @@ public class NavigationUtils {
 		while(!validMenu) {
 		    System.out.print("Choix du menu : ");
 		    String menuSelected = SCAN.nextLine();
-		    validMenu = true;
 		    
 		    switch (menuSelected) {
 			case "1":
 				System.out.println("\nAddition");
+			    validMenu = true;
 				execAddition();
 				break;
 			case "E":
 				System.out.println("\nVous avez quittez l'application !");
+			    validMenu = true;
 				System.exit(0);
 				break;
 
 			default:
 				System.out.println("\nChoix du menu invalide !");
-				validMenu = false;
 				break;
 			}
 		    
@@ -55,14 +55,14 @@ public class NavigationUtils {
 	 */
 	public static void execAddition() {
 		System.out.print("a = ");
-		float a = SCAN.nextFloat();
+		float valueA = SCAN.nextFloat();
 		System.out.print("b = ");
-		float b = SCAN.nextFloat();
+		float valueB = SCAN.nextFloat();
 		
-		Addition add = new Addition(a);
-		float result = add.apply(b);
+		Addition add = new Addition(valueA);
+		final float result = add.apply(valueB);
 		
-		String msg = a + " + " + b + " = " + result + "\n";
+		final String msg = valueA + " + " + valueB + " = " + result + "\n";
 		System.out.println(msg);
 		
 	}
