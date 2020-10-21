@@ -31,6 +31,10 @@ test {
 	ignoreFailures = true
 }
 
+javadoc{
+	failOnError = false
+}
+
 pmd {
     consoleOutput = true
     toolVersion = "6.21.0"
@@ -57,5 +61,5 @@ spotbugs {
 
 cpd{
 	ignoreFailures = true
-	minimumTokenCount = 3
+	minimumTokenCount = 10
 }
