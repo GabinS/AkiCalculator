@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import com.akicalculator.models.Addition;
 import com.akicalculator.models.Substraction;
+import com.akicalculator.models.Multiplication;
 
 /**
  * Navigation for menu
@@ -17,9 +18,10 @@ public class NavigationUtils {
 	 */
 	public static void printMenu () {
 	    System.out.println("|      AkiCalculator       |");
-	    System.out.println("| OpÃ©ration:               |");
+	    System.out.println("| Opération:               |");
 	    System.out.println("|    [1] Addition          |");
 	    System.out.println("|    [2] Soustraction      |");
+	    System.out.println("|    [3] Multiplication    |");
 	    System.out.println("|[E] Exit                  |");
 	}
 	
@@ -41,6 +43,9 @@ public class NavigationUtils {
 			case "2":
 				System.out.println("Soustraction");
 				execSubstraction();
+			case "3":
+				System.out.println("Multiplication");
+				execMultiplication();
 				break;
 			case "E":
 				System.out.println("\nVous avez quittez l'application !");
@@ -88,5 +93,24 @@ public class NavigationUtils {
 		final String msg = valueA + " - " + valueB + " = " + result + "\n";
 		System.out.println(msg);
 		
+	}
+	
+	/**
+	 *  Launch Multiplication navigation
+	 */
+	public static void execMultiplication()	{
+		
+		float a = 0;
+		float b = 0;
+		
+		System.out.println("a = ");
+		a = SCAN.nextFloat();
+		System.out.println("b = ");
+		b = SCAN.nextFloat();
+		
+		Multiplication multi = new Multiplication(a);
+		float result = multi.apply(b);
+		
+		System.out.println(String.valueOf(a) + " + " + String.valueOf(b) + " = " + String.valueOf(result));
 	}
 }
