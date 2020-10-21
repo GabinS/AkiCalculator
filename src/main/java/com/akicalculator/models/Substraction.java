@@ -9,11 +9,11 @@ public class Substraction {
 	/**
 	 * Value to substract.
 	 */
-	private float value;
+	private transient float value;
 	/**
 	 * Value to operate.
 	 */
-	private float substractValue;
+	private transient float substractValue;
 	
 	/***
 	 * 
