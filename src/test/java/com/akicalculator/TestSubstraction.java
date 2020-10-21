@@ -1,7 +1,5 @@
 package com.akicalculator;
 
-import static org.junit.Assert.*;
-
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -14,13 +12,13 @@ import com.akicalculator.models.Substraction;
  *
  */
 public class TestSubstraction {
-	
-	/**
-	 * The substraction to test.
-	 */
+
+    /**
+     * The substraction to test.
+     */
     private Substraction substract;
 
-    
+
     /**
      * Init the value to substract.
      * @throws Exception
@@ -37,21 +35,11 @@ public class TestSubstraction {
     /**
      * Apply the substract command.
      */
-	@Test
+    @Test
     public void testApply() {
-        float result = this.substract.apply(3);
+        final float result = this.substract.apply(3);
         Assert.assertEquals(2.0f, result, 0.0f);
 
     }
-
-	/**
-	 * Rollback the substract command.
-	 */
-    @Test
-    public void testUndo() {
-        float result = this.substract.undo(3);
-        Assert.assertEquals(8.0f, result, 0.0f);
-    }
-
 
 }
