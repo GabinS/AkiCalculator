@@ -27,7 +27,7 @@ repositories {
 }
 
 test {
-	//ignoreFailure = true
+	ignoreFailures = true
 }
 
 pmd {
@@ -48,6 +48,6 @@ pmd {
 
 spotbugs {
     ignoreFailures = true
-    showStackTraces = true
-    showProgress = true
+    showStackTraces = false
+    showProgress = false
 }
