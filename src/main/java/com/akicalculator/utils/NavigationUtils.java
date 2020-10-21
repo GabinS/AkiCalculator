@@ -16,7 +16,7 @@ public class NavigationUtils {
 	    System.out.println("|      AkiCalculator       |");
 	    System.out.println("| Opération:               |");
 	    System.out.println("|    [1] Addition          |");
-	    System.out.println("|    [2] Substraction      |");
+	    System.out.println("|    [2] Soustraction      |");
 	    System.out.println("|[E] Exit                  |");
 	}
 	
@@ -38,7 +38,7 @@ public class NavigationUtils {
 				execAddition();
 				break;
 			case "2":
-				System.out.println("Substraction");
+				System.out.println("Soustraction");
 				execSubstraction();
 				break;
 			case "E":
@@ -82,6 +82,7 @@ public class NavigationUtils {
 		a = scan.nextFloat();
 		System.out.println("b = ");
 		b = scan.nextFloat();
+		
 		
 		Substraction substract = new Substraction(a);
 		float result = substract.apply(b);

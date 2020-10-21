@@ -23,38 +23,7 @@ public class Substraction {
         this.value = value;
     }
         
-    /**
-     * Get the value to substract.
-     * @return the value to substract.
-     */
-    public float getValue() {
-		return value;
-	}
-    
-    /**
-     * Get the value to operate.
-     * @return the substract value
-     */
-	public float getSubstractValue() {
-		return substractValue;
-	}
-
-	/**
-	 * Set  the value to substract.
-	 * @param value to substract.
-	 */
-	public void setValue(final float value) {
-		this.value = value;
-	}
-
-	/**
-	 * Set the value to operate.
-	 * @param substractValue : the substract value.
-	 */
-	public void setSubstractValue(final float substractValue) {
-		this.substractValue = substractValue;
-	}
-
+  
 	/**
      * Apply command.
      * @param b value to operate.

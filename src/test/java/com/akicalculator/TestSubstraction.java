@@ -20,6 +20,7 @@ public class TestSubstraction {
 	 */
     private Substraction substract;
 
+    
     /**
      * Init the value to substract.
      * @throws Exception
