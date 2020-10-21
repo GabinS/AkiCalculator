@@ -77,17 +77,16 @@ public class NavigationUtils {
 	 * Launch Substraction navigation.
 	 */
 	public static void execSubstraction() {
-		float a = 0;
-		float b = 0;
-		System.out.println("a = ");
-		a = scan.nextFloat();
-		System.out.println("b = ");
-		b = scan.nextFloat();
+		System.out.print("a = ");
+		float valueA = SCAN.nextFloat();
+		System.out.print("b = ");
+		float valueB = SCAN.nextFloat();
 		
-		Substraction substract = new Substraction(a);
-		float result = substract.apply(b);
+		Substraction add = new Substraction(valueA);
+		final float result = add.apply(valueB);
 		
-		System.out.println(String.valueOf(a) + " - " + String.valueOf(b) + " = " + String.valueOf(result));
+		final String msg = valueA + " - " + valueB + " = " + result + "\n";
+		System.out.println(msg);
 		
 	}
 }
