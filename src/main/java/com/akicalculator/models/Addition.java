@@ -1,23 +1,30 @@
 package com.akicalculator.models;
 
+/**
+ * Addition
+ */
 public class Addition {
 	
-    private float value;
-    private float addValue;
+	/**
+	 * Current value
+	 */
+    private transient float value;
 
-    public Addition(float a) {
-        this.value = a;
+    /**
+     * Default Constructor.
+     * @param a the current value.
+     */
+    public Addition(final float value) {
+        this.value = value;
     }
 
-    public float apply(float b) {
-        this.addValue = b;
-
-        this.value += this.addValue;
-        return this.value;
-    }
-
-    public float undo() {
-        this.value -= this.addValue;
+    /**
+     * Apply addition
+     * @param addValue the value to add at current.
+     * @return the result of addition.
+     */
+    public float apply(final float addValue) {
+        this.value += addValue;
         return this.value;
     }
 }
