@@ -4,46 +4,24 @@ package com.akicalculator.models;
  * Substraction class.
  *
  */
-public class Substraction {
+public class Substraction extends Operation {
 	
 	/**
-	 * Value to substract.
-	 */
-	private transient float value;
-	/**
-	 * Value to operate.
-	 */
-	private transient float substractValue;
-	
-	/***
-	 * 
+	 * Default Constructor.
 	 * @param value : first value of the substraction.
 	 */
     public Substraction(final float value) {
-        this.value = value;
+        super(value);
     }
-        
   
 	/**
-     * Apply command.
-     * @param b value to operate.
+     * Apply substraction.
+     * @param substractValue value to operate.
      * @return the new value after command.
      */
     public float apply(final float substractValue) {
-        this.substractValue = substractValue;
-        this.value -= this.substractValue;
+        this.value -= substractValue;
         return this.value;
     }
-
-    /**
-     * Rollback the value.
-     * @param b value to operate.
-     * @return the value before command.
-     */
-	public float undo(final float substractValue) {
-		this.substractValue = substractValue;
-        this.value += this.substractValue;
-        return this.value;
-	}	
 
 }

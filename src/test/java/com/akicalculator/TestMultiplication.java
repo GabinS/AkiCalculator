@@ -41,20 +41,5 @@ public class TestMultiplication {
 	     Assert.assertEquals(6.0f, result, 0.0f);
 	}
 	
-	 @Test
-	    public void testUndo() {
-	        float result = this.multi.redo(3);
-
-	        result = this.multi.undo();
-	        Assert.assertEquals(2.0f, result, 0.0f);
-	    }
-	 
-	 @Test
-	    public void testRedo() {
-	        float result = this.multi.redo(3);
-
-	        Assert.assertEquals(6.0f, result, 0.0f);
-	    }
-	
 
 }

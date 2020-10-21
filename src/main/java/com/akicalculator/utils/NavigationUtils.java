@@ -3,6 +3,7 @@ package com.akicalculator.utils;
 import java.util.Scanner;
 
 import com.akicalculator.models.Addition;
+import com.akicalculator.models.Division;
 import com.akicalculator.models.Substraction;
 import com.akicalculator.models.Multiplication;
 
@@ -17,12 +18,15 @@ public class NavigationUtils {
 	 * Display menu in console
 	 */
 	public static void printMenu () {
+	    System.out.println("----------------------------");
 	    System.out.println("|      AkiCalculator       |");
 	    System.out.println("| Opération:               |");
 	    System.out.println("|    [1] Addition          |");
 	    System.out.println("|    [2] Soustraction      |");
 	    System.out.println("|    [3] Multiplication    |");
+	    System.out.println("|    [4] Division          |");
 	    System.out.println("|[E] Exit                  |");
+	    System.out.println("----------------------------");
 	}
 	
 	/**
@@ -41,11 +45,18 @@ public class NavigationUtils {
 				execAddition();
 				break;
 			case "2":
-				System.out.println("Soustraction");
+				System.out.println("\nSoustraction");
+			    validMenu = true;
 				execSubstraction();
 			case "3":
-				System.out.println("Multiplication");
+				System.out.println("\nMultiplication");
+			    validMenu = true;
 				execMultiplication();
+				break;
+			case "4":
+				System.out.println("\nDivision");
+			    validMenu = true;
+				execDivision();
 				break;
 			case "E":
 				System.out.println("\nVous avez quittez l'application !");
@@ -99,18 +110,31 @@ public class NavigationUtils {
 	 *  Launch Multiplication navigation
 	 */
 	public static void execMultiplication()	{
+		System.out.print("a = ");
+		float valueA = SCAN.nextFloat();
+		System.out.print("b = ");
+		float valueB = SCAN.nextFloat();
 		
-		float a = 0;
-		float b = 0;
-		
-		System.out.println("a = ");
-		a = SCAN.nextFloat();
-		System.out.println("b = ");
-		b = SCAN.nextFloat();
-		
-		Multiplication multi = new Multiplication(a);
-		float result = multi.apply(b);
-		
-		System.out.println(String.valueOf(a) + " + " + String.valueOf(b) + " = " + String.valueOf(result));
+		Multiplication multi = new Multiplication(valueA);
+		float result = multi.apply(valueB);
+
+		final String msg = valueA + " x " + valueB + " = " + result + "\n";
+		System.out.println(msg);
+	}
+	
+	/**
+	 *  Launch Division navigation
+	 */
+	public static void execDivision()	{
+		System.out.print("a = ");
+		float valueA = SCAN.nextFloat();
+		System.out.print("b = ");
+		float valueB = SCAN.nextFloat();		
+
+		Division division = new Division(valueA);
+		float result = division.apply(valueB);
+
+		final String msg = valueA + " / " + valueB + " = " + result + "\n";
+		System.out.println(msg);
 	}
 }
