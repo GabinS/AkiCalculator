@@ -3,6 +3,7 @@ package com.akicalculator.utils;
 import java.util.Scanner;
 
 import com.akicalculator.models.Addition;
+import com.akicalculator.models.Substraction;
 
 public class NavigationUtils {
 
@@ -15,6 +16,7 @@ public class NavigationUtils {
 	    System.out.println("|      AkiCalculator       |");
 	    System.out.println("| Opération:               |");
 	    System.out.println("|    [1] Addition          |");
+	    System.out.println("|    [2] Substraction      |");
 	    System.out.println("|[E] Exit                  |");
 	}
 	
@@ -34,6 +36,10 @@ public class NavigationUtils {
 			case "1":
 				System.out.println("Addition");
 				execAddition();
+				break;
+			case "2":
+				System.out.println("Substraction");
+				execSubstraction();
 				break;
 			case "E":
 				System.exit(0);
@@ -63,6 +69,24 @@ public class NavigationUtils {
 		float result = add.apply(b);
 		
 		System.out.println(String.valueOf(a) + " + " + String.valueOf(b) + " = " + String.valueOf(result));
+		
+	}
+	
+	/**
+	 * Launch Substraction navigation.
+	 */
+	public static void execSubstraction() {
+		float a = 0;
+		float b = 0;
+		System.out.println("a = ");
+		a = scan.nextFloat();
+		System.out.println("b = ");
+		b = scan.nextFloat();
+		
+		Substraction substract = new Substraction(a);
+		float result = substract.apply(b);
+		
+		System.out.println(String.valueOf(a) + " - " + String.valueOf(b) + " = " + String.valueOf(result));
 		
 	}
 }
