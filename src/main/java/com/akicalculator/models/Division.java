@@ -19,6 +19,7 @@ public class Division extends Operation {
      * @return the division result
      */
     public float apply() {
+        this.result = 0;
         if (0.0f != this.secondValue) {
             this.result = this.firstValue / this.secondValue;
         }

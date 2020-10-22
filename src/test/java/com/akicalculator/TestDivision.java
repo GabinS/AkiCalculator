@@ -26,7 +26,7 @@ public class TestDivision {
         Division division = new Division(12, 0);
         final float result = division.apply();
 
-        Assert.assertEquals(12.0f, result, 0.0f);
+        Assert.assertEquals(0.0f, result, 0.0f);
     }
 
     @Test
