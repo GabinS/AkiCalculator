@@ -71,7 +71,9 @@ checkstyle {
 cpd {
     ignoreFailures = true
     minimumTokenCount = 10
-    exclude '**Test*'
+}
+cpdCheck{
+     source = sourceSets.main.allJava
 }
 
 task zipJavadoc(type: Zip) {
