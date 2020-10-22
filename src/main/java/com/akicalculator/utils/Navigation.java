@@ -20,7 +20,7 @@ public class Navigation {
     /**
      * Default constructor
      */
-    public Navigation() { }
+    public Navigation() {}
 
     /**
      * Display menu in console
@@ -44,7 +44,7 @@ public class Navigation {
         Boolean validMenu = false;
         while (!validMenu) {
             System.out.print("Choix du menu : ");
-            String menuSelected = SCAN.next();
+            final String menuSelected = SCAN.next();
 
             switch (menuSelected) {
                 case "1":
@@ -86,7 +86,7 @@ public class Navigation {
      * @param letter is display for the value
      * @return value
      */
-    public float getValuekeyBoard(String letter) {
+    public float getValuekeyBoard(final String letter) {
         System.out.print(letter + " = ");
         final float value = SCAN.nextFloat();
         return value;
@@ -96,23 +96,23 @@ public class Navigation {
      * Execute operation
      * @param operator sign of operation
      */
-    public void execOperation(String operator) {
+    public void execOperation(final String operator) {
         final float valueA = getValuekeyBoard("a");
         final float valueB = getValuekeyBoard("b");
 
         switch (operator) {
             case "+":
-                Addition addition = new Addition(valueA, valueB);
+                final Addition addition = new Addition(valueA, valueB);
                 addition.apply();
                 addition.printMessageOperation();
                 break;
             case "-":
-                Subtraction subtraction = new Subtraction(valueA, valueB);
+                final Subtraction subtraction = new Subtraction(valueA, valueB);
                 subtraction.apply();
                 subtraction.printMessageOperation();
                 break;
             case "*":
-                Multiplication multiplication = new Multiplication(valueA, valueB);
+                final Multiplication multiplication = new Multiplication(valueA, valueB);
                 multiplication.apply();
                 multiplication.printMessageOperation();
                 break;
@@ -120,7 +120,7 @@ public class Navigation {
                 if (0.0f != valueB) {
                     System.out.println("Impossible de faire une division par 0");
                 } else {
-                    Division division = new Division(valueA, valueB);
+                    final Division division = new Division(valueA, valueB);
                     division.apply();
                     division.printMessageOperation();
                 }
