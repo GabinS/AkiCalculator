@@ -6,6 +6,9 @@ import com.akicalculator.models.Addition;
 import com.akicalculator.models.Division;
 import com.akicalculator.models.Multiplication;
 import com.akicalculator.models.Subtraction;
+import com.akicalculator.models.Modulo;
+import com.akicalculator.models.Puissance;
+import com.akicalculator.models.SquareRoot;
 
 /**
  * Navigation for menu
@@ -33,6 +36,9 @@ public class Navigation {
         System.out.println("|    [2] Soustraction      |");
         System.out.println("|    [3] Multiplication    |");
         System.out.println("|    [4] Division          |");
+        System.out.println("|    [5] Modulo            |");
+        System.out.println("|    [6] Puissance         |");
+        System.out.println("|    [7] Racine carrée     |");
         System.out.println("|[E] Exit                  |");
         System.out.println("----------------------------");
     }
@@ -67,8 +73,23 @@ public class Navigation {
                     validMenu = true;
                     execOperation("/");
                     break;
+                case "5":
+                    System.out.println("\nModulo");
+                    validMenu = true;
+                    execOperation("%");
+                    break;
+                case "6":
+                    System.out.println("\nPuissance");
+                    validMenu = true;
+                    execOperation("^");
+                    break;
+                case "7":
+                    System.out.println("\nRacine carrée");
+                    validMenu = true;
+                    execOperation("V");
+                    break;
                 case "E":
-                    System.out.println("\nVous avez quittez l'application !");
+                    System.out.println("\nVous avez quitté l'application !");
                     validMenu = true;
                     System.exit(0);
                     break;
@@ -98,7 +119,11 @@ public class Navigation {
      */
     public void execOperation(final String operator) {
         final float valueA = getValuekeyBoard("a");
-        final float valueB = getValuekeyBoard("b");
+        float valueB = 0.0f;
+
+        if(operator != "V") {
+           valueB = getValuekeyBoard("b");
+        }
 
         switch (operator) {
             case "+":
@@ -124,6 +149,21 @@ public class Navigation {
                     division.apply();
                     division.printMessageOperation();
                 }
+                break;
+            case "%":
+                Modulo modulo = new Modulo(valueA, valueB);
+                modulo.apply();
+                modulo.printMessageOperation();
+                break;
+            case "^":
+                Puissance puissance = new Puissance(valueA, valueB);
+                puissance.apply();
+                puissance.printMessageOperation();
+                break;
+            case "V":
+                SquareRoot squareRoot = new SquareRoot(valueA);
+                squareRoot.apply();
+                squareRoot.printMessageOperation();
                 break;
             default:
                 break;
