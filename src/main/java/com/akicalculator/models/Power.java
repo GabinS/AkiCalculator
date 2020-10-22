@@ -10,8 +10,8 @@ public class Power extends Operation{
      * @param firstValue of operation
      * @param secondValue of operation
      */
-    public Power(float firstValue, float secondValue) {
-        super(firstValue, secondValue);
+    public Power(final float firstValue, final float secondValue) {
+        super(firstValue, secondValue, "^");
     }
 
     /**

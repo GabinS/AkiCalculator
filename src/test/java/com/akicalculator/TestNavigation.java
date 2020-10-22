@@ -96,13 +96,13 @@ public class TestNavigation {
     @Test
     public void testExecOperation() {
 
-        this.nav.execOperation("+");
-        this.nav.execOperation("-");
-        this.nav.execOperation("*");
-        this.nav.execOperation("/");
-        this.nav.execOperation("%");
-        this.nav.execOperation("^");
-        this.nav.execOperation("V");
+        this.nav.execOperation("+", 2, 4);
+        this.nav.execOperation("-", 4, 2);
+        this.nav.execOperation("*", 4, 2);
+        this.nav.execOperation("/", 4, 2);
+        this.nav.execOperation("%", 4, 2);
+        this.nav.execOperation("^", 4, 2);
+        this.nav.execOperation("V", 4, 2);
 
 
     }

@@ -10,8 +10,8 @@ public class Modulo extends Operation{
      * @param firstValue of operation
      * @param secondValue of operation
      */
-    public Modulo(float firstValue, float secondValue) {
-        super(firstValue, secondValue);
+    public Modulo(final float firstValue, final float secondValue) {
+        super(firstValue, secondValue, "%");
     }
 
     /**
