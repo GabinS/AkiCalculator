@@ -72,7 +72,7 @@ cpd {
     minimumTokenCount = 10
 }
 
-task zipJavaDoc(type: Zip) {
+task zipJavadoc(type: Zip) {
     from "/doc"
     destinationDir = file("/dist")
     archiveName = "java-doc.zip"
