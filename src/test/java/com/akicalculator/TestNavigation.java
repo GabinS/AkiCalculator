@@ -96,6 +96,15 @@ public class TestNavigation {
     @Test
     public void testExecOperation() {
 
+        this.nav.execOperation("+");
+        this.nav.execOperation("-");
+        this.nav.execOperation("*");
+        this.nav.execOperation("/");
+        this.nav.execOperation("%");
+        this.nav.execOperation("^");
+        this.nav.execOperation("V");
+
+
     }
 
 }
