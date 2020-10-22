@@ -3,14 +3,14 @@ package com.akicalculator.models;
 /**
  * Power class.
  */
-public class Puissance extends Operation{
+public class Power extends Operation{
 
     /**
      * Default Constructor.
      * @param firstValue of operation
      * @param secondValue of operation
      */
-    public Puissance(float firstValue, float secondValue) {
+    public Power(float firstValue, float secondValue) {
         super(firstValue, secondValue);
     }
 

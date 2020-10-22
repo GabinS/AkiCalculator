@@ -7,21 +7,21 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import com.akicalculator.models.Puissance;
+import com.akicalculator.models.Power;
 
 /**
  * Power test class.
  */
-public class TestPuissance {
+public class TestPower {
 
-    private Puissance puissance;
+    private Power power;
 
     /**
     * @throws java.lang.Exception
     */
     @Before
     public void setUp() throws Exception {
-        this.puissance = new Puissance(2, 3);
+        this.power = new Power(2, 3);
     }
 
     /**
@@ -33,7 +33,7 @@ public class TestPuissance {
 
     @Test
     public void testApply() {
-        final float result = this.puissance.apply();
+        final float result = this.power.apply();
 
         Assert.assertEquals(8.0f, result, 0.0f);
     }
