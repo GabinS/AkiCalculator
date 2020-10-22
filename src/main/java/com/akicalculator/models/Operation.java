@@ -44,10 +44,9 @@ public class Operation implements Command {
     }
 
     /**
-     * Display operation in console
+     * Get operation in console
      */
-    public void printMessageOperation() {
-        final String msg = this.firstValue + " " + this.operator + " " + this.secondValue + " = " + this.result + "\n";
-        System.out.println(msg);
+    public String getMessageOperation() {
+        return this.firstValue + " " + this.operator + " " + this.secondValue + " = " + this.result + "\n";
     }
 }
