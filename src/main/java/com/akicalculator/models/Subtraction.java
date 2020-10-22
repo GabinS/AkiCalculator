@@ -12,7 +12,7 @@ public class Subtraction extends Operation {
      * @param secondValue of operation
      */
     public Subtraction(final float firstValue, final float secondValue) {
-        super(firstValue, secondValue);
+        super(firstValue, secondValue, "-");
     }
 
     /**
