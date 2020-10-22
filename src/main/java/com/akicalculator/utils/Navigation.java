@@ -112,25 +112,26 @@ public class Navigation {
         final float valueA = getValuekeyBoard("a");
         final float valueB = getValuekeyBoard("b");
         float result = 0;
+
         switch (operator) {
-        case "+":
-            Addition add = new Addition(valueA, valueB);
-            result = add.apply();
-            break;
-        case "-":
-            Subtraction subtraction = new Subtraction(valueA, valueB);
-            result = subtraction.apply();
-            break;
-        case "*":
-            Multiplication multiplication = new Multiplication(valueA, valueB);
-            result = multiplication.apply();
-            break;
-        case "/":
-            Division division = new Division(valueA, valueB);
-            result = division.apply();
-            break;
-        default:
-            break;
+            case "+":
+                Addition add = new Addition(valueA, valueB);
+                result = add.apply();
+                break;
+            case "-":
+                Subtraction subtraction = new Subtraction(valueA, valueB);
+                result = subtraction.apply();
+                break;
+            case "*":
+                Multiplication multiplication = new Multiplication(valueA, valueB);
+                result = multiplication.apply();
+                break;
+            case "/":
+                Division division = new Division(valueA, valueB);
+                result = division.apply();
+                break;
+            default:
+                break;
         }
         getMessageOperation(valueA, valueB, result, operator);
     }
