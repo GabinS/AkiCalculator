@@ -127,7 +127,7 @@ public class Navigation {
         Substraction add = new Substraction(valueA);
         final float result = add.apply(valueB);
 
-        getMessageOperation(valueA, valueB, result, "+");
+        getMessageOperation(valueA, valueB, result, "-");
     }
 
     /**
@@ -140,7 +140,7 @@ public class Navigation {
         Multiplication multi = new Multiplication(valueA);
         float result = multi.apply(valueB);
 
-        getMessageOperation(valueA, valueB, result, "+");
+        getMessageOperation(valueA, valueB, result, "x");
     }
 
     /**
@@ -153,6 +153,6 @@ public class Navigation {
         Division division = new Division(valueA);
         float result = division.apply(valueB);
 
-        getMessageOperation(valueA, valueB, result, "+");
+        getMessageOperation(valueA, valueB, result, "/");
     }
 }
