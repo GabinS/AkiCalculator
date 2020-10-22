@@ -5,6 +5,7 @@ import java.util.Scanner;
 import com.akicalculator.models.Addition;
 import com.akicalculator.models.Division;
 import com.akicalculator.models.Multiplication;
+import com.akicalculator.models.Puissance;
 import com.akicalculator.models.Subtraction;
 
 /**
@@ -33,6 +34,7 @@ public class Navigation {
         System.out.println("|    [2] Soustraction      |");
         System.out.println("|    [3] Multiplication    |");
         System.out.println("|    [4] Division          |");
+        System.out.println("|    [5] Puissance         |");
         System.out.println("|[E] Exit                  |");
         System.out.println("----------------------------");
     }
@@ -66,6 +68,11 @@ public class Navigation {
                     System.out.println("\nDivision");
                     validMenu = true;
                     execOperation("/");
+                    break;
+                case "5":
+                    System.out.println("\nPuissance");
+                    validMenu = true;
+                    execOperation("^");
                     break;
                 case "E":
                     System.out.println("\nVous avez quittez l'application !");
@@ -129,6 +136,10 @@ public class Navigation {
             case "/":
                 Division division = new Division(valueA, valueB);
                 result = division.apply();
+                break;
+            case "^":
+                Puissance puissance = new Puissance(valueA, valueB);
+                result = puissance.apply();
                 break;
             default:
                 break;
