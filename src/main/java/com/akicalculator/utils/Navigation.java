@@ -28,7 +28,7 @@ public class Navigation {
     public void printMenu() {
         System.out.println("----------------------------");
         System.out.println("|      AkiCalculator       |");
-        System.out.println("| OpÃ©ration:               |");
+        System.out.println("| Opération:               |");
         System.out.println("|    [1] Addition          |");
         System.out.println("|    [2] Soustraction      |");
         System.out.println("|    [3] Multiplication    |");
@@ -44,28 +44,28 @@ public class Navigation {
         Boolean validMenu = false;
         while (!validMenu) {
             System.out.print("Choix du menu : ");
-            String menuSelected = SCAN.nextLine();
+            String menuSelected = SCAN.next();
 
             switch (menuSelected) {
                 case "1":
                     System.out.println("\nAddition");
                     validMenu = true;
-                    execAddition();
+                    execOperation("+");
                     break;
                 case "2":
                     System.out.println("\nSoustraction");
                     validMenu = true;
-                    execSubstraction();
+                    execOperation("-");
                     break;
                 case "3":
                     System.out.println("\nMultiplication");
                     validMenu = true;
-                    execMultiplication();
+                    execOperation("*");
                     break;
                 case "4":
                     System.out.println("\nDivision");
                     validMenu = true;
-                    execDivision();
+                    execOperation("/");
                     break;
                 case "E":
                     System.out.println("\nVous avez quittez l'application !");
@@ -105,54 +105,34 @@ public class Navigation {
     }
 
     /**
-     * Launch Addition navigation
+     * Execute operation
+     * @param operator sign of operation
      */
-    public void execAddition() {
+    public void execOperation(String operator) {
         final float valueA = getValuekeyBoard("a");
         final float valueB = getValuekeyBoard("b");
-
-        Addition add = new Addition(valueA, valueB);
-        final float result = add.apply();
-
-        getMessageOperation(valueA, valueB, result, "+");
+        float result = 0;
+        switch (operator) {
+        case "+":
+            Addition add = new Addition(valueA, valueB);
+            result = add.apply();
+            break;
+        case "-":
+            Subtraction subtraction = new Subtraction(valueA, valueB);
+            result = subtraction.apply();
+            break;
+        case "*":
+            Multiplication multiplication = new Multiplication(valueA, valueB);
+            result = multiplication.apply();
+            break;
+        case "/":
+            Division division = new Division(valueA, valueB);
+            result = division.apply();
+            break;
+        default:
+            break;
+        }
+        getMessageOperation(valueA, valueB, result, operator);
     }
 
-    /**
-     * Launch Subtraction navigation.
-     */
-    public void execSubstraction() {
-        final float valueA = getValuekeyBoard("a");
-        final float valueB = getValuekeyBoard("b");
-
-        Subtraction add = new Subtraction(valueA,valueB);
-        final float result = add.apply();
-
-        getMessageOperation(valueA, valueB, result, "-");
-    }
-
-    /**
-     *  Launch Multiplication navigation
-     */
-    public void execMultiplication() {
-        final float valueA = getValuekeyBoard("a");
-        final float valueB = getValuekeyBoard("b");
-
-        Multiplication multi = new Multiplication(valueA, valueB);
-        float result = multi.apply();
-
-        getMessageOperation(valueA, valueB, result, "x");
-    }
-
-    /**
-     *  Launch Division navigation
-     */
-    public void execDivision() {
-        final float valueA = getValuekeyBoard("a");
-        final float valueB = getValuekeyBoard("b");
-
-        Division division = new Division(valueA, valueB);
-        float result = division.apply();
-
-        getMessageOperation(valueA, valueB, result, "/");
-    }
 }
