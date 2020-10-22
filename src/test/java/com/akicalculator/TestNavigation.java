@@ -19,7 +19,6 @@ import com.akicalculator.utils.Navigation;
  */
 public class TestNavigation {
 
-
     private Navigation nav;
 
     /**
@@ -27,7 +26,6 @@ public class TestNavigation {
      */
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
-
     }
 
     /**
@@ -35,7 +33,6 @@ public class TestNavigation {
      */
     @AfterClass
     public static void tearDownAfterClass() throws Exception {
-
     }
 
     /**
@@ -51,7 +48,6 @@ public class TestNavigation {
      */
     @After
     public void tearDown() throws Exception {
-
     }
 
     /**
@@ -95,34 +91,19 @@ public class TestNavigation {
     }
 
     /**
-     * Test method for {@link com.akicalculator.utils.Navigation#execAddition()}.
+     * Test method for {@link com.akicalculator.utils.Navigation#execOperation(java.lang.String)}.
      */
     @Test
-    public void testExecAddition() {
+    public void testExecOperation() {
 
-    }
+        this.nav.execOperation("+", 2, 4);
+        this.nav.execOperation("-", 4, 2);
+        this.nav.execOperation("*", 4, 2);
+        this.nav.execOperation("/", 4, 2);
+        this.nav.execOperation("%", 4, 2);
+        this.nav.execOperation("^", 4, 2);
+        this.nav.execOperation("V", 4, 2);
 
-    /**
-     * Test method for {@link com.akicalculator.utils.Navigation#execSubstraction()}.
-     */
-    @Test
-    public void testExecSubstraction() {
-
-    }
-
-    /**
-     * Test method for {@link com.akicalculator.utils.Navigation#execMultiplication()}.
-     */
-    @Test
-    public void testExecMultiplication() {
-
-    }
-
-    /**
-     * Test method for {@link com.akicalculator.utils.Navigation#execDivision()}.
-     */
-    @Test
-    public void testExecDivision() {
 
     }
 
