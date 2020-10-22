@@ -11,7 +11,7 @@ public class Addition extends Operation {
      * @param secondValue of operation
      */
     public Addition(final float firstValue, final float secondValue) {
-        super(firstValue, secondValue);
+        super(firstValue, secondValue, "+");
     }
 
     /**

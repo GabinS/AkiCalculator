@@ -93,47 +93,41 @@ public class Navigation {
     }
 
     /**
-     * Display operation in console
-     * @param valueA first value
-     * @param valueB second value
-     * @param result of operation
-     * @param operator type operator
-     */
-    public void getMessageOperation(float valueA, float valueB, float result, String operator) {
-        final String msg = valueA + " " + operator + " " + valueB + " = " + result + "\n";
-        System.out.println(msg);
-    }
-
-    /**
      * Execute operation
      * @param operator sign of operation
      */
     public void execOperation(String operator) {
         final float valueA = getValuekeyBoard("a");
         final float valueB = getValuekeyBoard("b");
-        float result = 0;
 
         switch (operator) {
             case "+":
-                Addition add = new Addition(valueA, valueB);
-                result = add.apply();
+                Addition addition = new Addition(valueA, valueB);
+                addition.apply();
+                addition.printMessageOperation();
                 break;
             case "-":
                 Subtraction subtraction = new Subtraction(valueA, valueB);
-                result = subtraction.apply();
+                subtraction.apply();
+                subtraction.printMessageOperation();
                 break;
             case "*":
                 Multiplication multiplication = new Multiplication(valueA, valueB);
-                result = multiplication.apply();
+                multiplication.apply();
+                multiplication.printMessageOperation();
                 break;
             case "/":
-                Division division = new Division(valueA, valueB);
-                result = division.apply();
+                if (0.0f != valueB) {
+                    System.out.println("Impossible de faire une division par 0");
+                } else {
+                    Division division = new Division(valueA, valueB);
+                    division.apply();
+                    division.printMessageOperation();
+                }
                 break;
             default:
                 break;
         }
-        getMessageOperation(valueA, valueB, result, operator);
     }
 
 }
