@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 import com.akicalculator.models.Addition;
 import com.akicalculator.models.Division;
-import com.akicalculator.models.Substraction;
 import com.akicalculator.models.Multiplication;
+import com.akicalculator.models.Substraction;
 
 /**
  * Navigation for menu
@@ -15,7 +15,7 @@ public class Navigation {
     /**
      * Scanner to get keyboard informations
      */
-    public final Scanner SCAN = new Scanner(System.in);
+    public static final Scanner SCAN = new Scanner(System.in);
 
     /**
      * Default constructor
