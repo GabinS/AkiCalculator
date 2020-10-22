@@ -7,7 +7,7 @@ public class Addition extends Operation {
 
     /**
      * Default Constructor.
-     * @param a the current value.
+     * @param value the current value.
      */
     public Addition(final float value) {
         super(value);
