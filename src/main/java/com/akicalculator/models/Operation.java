@@ -22,7 +22,8 @@ public class Operation {
 
     /**
      * Default Constructor.
-     * @param value the current value.
+     * @param firstValue of operation
+     * @param secondValue of operation
      */
     public Operation(final float firstValue, final float secondValue) {
         this.firstValue = firstValue;

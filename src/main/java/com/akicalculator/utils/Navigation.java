@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 import com.akicalculator.models.Addition;
 import com.akicalculator.models.Division;
-import com.akicalculator.models.Subtraction;
 import com.akicalculator.models.Multiplication;
+import com.akicalculator.models.Subtraction;
 
 /**
  * Navigation for menu
