@@ -2,7 +2,6 @@ package com.akicalculator.models;
 
 /**
  * Power class.
- *
  */
 public class Puissance extends Operation{
 

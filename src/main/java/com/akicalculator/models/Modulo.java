@@ -2,7 +2,6 @@ package com.akicalculator.models;
 
 /**
  * Modulo class.
- *
  */
 public class Modulo extends Operation{
 
