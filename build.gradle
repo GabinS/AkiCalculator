@@ -30,11 +30,11 @@ repositories {
 }
 
 test {
-	ignoreFailures = true
+    ignoreFailures = true
 }
 
 javadoc{
-	failOnError = false
+    failOnError = false
 }
 
 pmd {
@@ -62,12 +62,18 @@ spotbugs {
 }
 
 checkstyle {
-	configFile rootProject.file('config/checkstyle/checkstyle.xml')
+    configFile rootProject.file('config/checkstyle/checkstyle.xml')
 
-	ignoreFailures = true
-	showViolations = true
+    ignoreFailures = true
+    showViolations = true
 }
 cpd {
-	ignoreFailures = true
-	minimumTokenCount = 10
+    ignoreFailures = true
+    minimumTokenCount = 10
+}
+
+task zipJavaDoc(type: Zip) {
+    from "/doc"
+    destinationDir = file("/dist")
+    archiveName = "java-doc.zip"
 }
