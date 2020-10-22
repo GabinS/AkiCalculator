@@ -13,7 +13,7 @@ public class TestDivision {
 
     @Before
     public void setUp() throws Exception {
-        this.division = new Division(12);
+        this.division = new Division(12, 3);
     }
 
     @After
@@ -23,14 +23,15 @@ public class TestDivision {
 
     @Test
     public void testApplyByZero() {
-        final float result = this.division.apply(0);
+        Division division = new Division(12, 0);
+        final float result = division.apply();
 
         Assert.assertEquals(12.0f, result, 0.0f);
     }
 
     @Test
     public void testApply() {
-        final float result = this.division.apply(3);
+        final float result = this.division.apply();
 
         Assert.assertEquals(4.0f, result, 0.0f);
     }

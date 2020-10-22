@@ -13,7 +13,7 @@ public class TestMultiplication {
 
     @Before
     public void setUp() throws Exception {
-        this.multi = new Multiplication(2);
+        this.multi = new Multiplication(2, 3);
     }
 
     @After
@@ -23,7 +23,7 @@ public class TestMultiplication {
 
     @Test
     public void testApply() {
-        final float result = this.multi.apply(3);
+        final float result = this.multi.apply();
 
         Assert.assertEquals(6.0f, result, 0.0f);
     }

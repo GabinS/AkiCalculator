@@ -23,7 +23,7 @@ public class TestAddition {
      */
     @Before
     public void setUp() throws Exception {
-        this.add = new Addition(3);
+        this.add = new Addition(3, 4);
     }
 
     /**
@@ -35,7 +35,7 @@ public class TestAddition {
 
     @Test
     public void testApply() {
-        final float result = this.add.apply(4);
+        final float result = this.add.apply();
 
         Assert.assertEquals(7.0f, result, 0.0f);
     }

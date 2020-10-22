@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import com.akicalculator.models.Addition;
 import com.akicalculator.models.Division;
-import com.akicalculator.models.Substraction;
+import com.akicalculator.models.Subtraction;
 import com.akicalculator.models.Multiplication;
 
 /**
@@ -111,21 +111,21 @@ public class Navigation {
         final float valueA = getValuekeyBoard("a");
         final float valueB = getValuekeyBoard("b");
 
-        Addition add = new Addition(valueA);
-        final float result = add.apply(valueB);
+        Addition add = new Addition(valueA, valueB);
+        final float result = add.apply();
 
         getMessageOperation(valueA, valueB, result, "+");
     }
 
     /**
-     * Launch Substraction navigation.
+     * Launch Subtraction navigation.
      */
     public void execSubstraction() {
         final float valueA = getValuekeyBoard("a");
         final float valueB = getValuekeyBoard("b");
 
-        Substraction add = new Substraction(valueA);
-        final float result = add.apply(valueB);
+        Subtraction add = new Subtraction(valueA,valueB);
+        final float result = add.apply();
 
         getMessageOperation(valueA, valueB, result, "+");
     }
@@ -137,8 +137,8 @@ public class Navigation {
         final float valueA = getValuekeyBoard("a");
         final float valueB = getValuekeyBoard("b");
 
-        Multiplication multi = new Multiplication(valueA);
-        float result = multi.apply(valueB);
+        Multiplication multi = new Multiplication(valueA, valueB);
+        float result = multi.apply();
 
         getMessageOperation(valueA, valueB, result, "+");
     }
@@ -150,8 +150,8 @@ public class Navigation {
         final float valueA = getValuekeyBoard("a");
         final float valueB = getValuekeyBoard("b");
 
-        Division division = new Division(valueA);
-        float result = division.apply(valueB);
+        Division division = new Division(valueA, valueB);
+        float result = division.apply();
 
         getMessageOperation(valueA, valueB, result, "+");
     }
