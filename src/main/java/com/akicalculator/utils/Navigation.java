@@ -39,14 +39,14 @@ public class Navigation {
     public void printMenu() {
         System.out.println("----------------------------");
         System.out.println("|      AkiCalculator       |");
-        System.out.println("| Opération:               |");
+        System.out.println("| Operation:               |");
         System.out.println("|    [1] Addition          |");
         System.out.println("|    [2] Soustraction      |");
         System.out.println("|    [3] Multiplication    |");
         System.out.println("|    [4] Division          |");
         System.out.println("|    [5] Modulo            |");
         System.out.println("|    [6] Puissance         |");
-        System.out.println("|    [7] Racine carrée     |");
+        System.out.println("|    [7] Racine carree     |");
         System.out.println("|[H] Historique            |");
         System.out.println("|[E] Exit                  |");
         System.out.println("----------------------------");
@@ -95,7 +95,7 @@ public class Navigation {
                     setInputValues("^");
                     break;
                 case "7":
-                    System.out.println("\nRacine carrée");
+                    System.out.println("\nRacine carree");
                     validMenu = true;
                     setInputValue("V");
                     break;
@@ -105,7 +105,7 @@ public class Navigation {
                     System.out.println(this.history.toString());
                     break;
                 case "E":
-                    System.out.println("\nVous avez quitté l'application !");
+                    System.out.println("\nVous avez quitte l'application !");
                     validMenu = true;
                     System.exit(0);
                     break;
@@ -133,7 +133,7 @@ public class Navigation {
      * @param operator sign of operation
      */
     public void execOperation(String operator, float valueA, float valueB) {
-
+        String resultOperation = "";
         switch (operator) {
             case "+":
                 final Addition addition = new Addition(valueA, valueB);
@@ -162,17 +162,17 @@ public class Navigation {
             case "%":
                 Modulo modulo = new Modulo(valueA, valueB);
                 modulo.apply();
-                modulo.printMessageOperation();
+                resultOperation = modulo.getMessageOperation();
                 break;
             case "^":
                 Power power = new Power(valueA, valueB);
                 power.apply();
-                power.printMessageOperation();
+                resultOperation = power.getMessageOperation();
                 break;
             case "V":
                 SquareRoot squareRoot = new SquareRoot(valueA);
                 squareRoot.apply();
-                squareRoot.printMessageOperation();
+                resultOperation = squareRoot.getMessageOperation();
                 break;
             default:
                 break;
