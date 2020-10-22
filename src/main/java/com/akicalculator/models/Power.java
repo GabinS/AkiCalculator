@@ -3,7 +3,7 @@ package com.akicalculator.models;
 /**
  * Power class.
  */
-public class Power extends Operation{
+public class Power extends Operation {
 
     /**
      * Default Constructor.
