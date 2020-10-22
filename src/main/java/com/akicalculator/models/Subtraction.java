@@ -1,25 +1,27 @@
 package com.akicalculator.models;
 
 /**
- * Addition
+ * Subtraction class.
+ *
  */
-public class Addition extends Operation {
+public class Subtraction extends Operation {
 
     /**
      * Default Constructor.
      * @param firstValue of operation
      * @param secondValue of operation
      */
-    public Addition(final float firstValue, final float secondValue) {
+    public Subtraction(final float firstValue, final float secondValue) {
         super(firstValue, secondValue);
     }
 
     /**
-     * Apply addition
-     * @return the addition result
+     * Apply subtraction
+     * @return the subtraction result
      */
     public float apply() {
-        this.result = this.firstValue + this.secondValue;
+        this.result = this.firstValue - this.secondValue;
         return this.result;
     }
+
 }

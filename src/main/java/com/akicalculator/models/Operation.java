@@ -6,19 +6,28 @@ package com.akicalculator.models;
 public class Operation {
 
     /**
-     * Current value
+     * First value
      */
-    protected transient float value;
+    protected transient float firstValue;
+
     /**
-     * operation value
+     * Second value
      */
-    protected transient float operationValue;
+    protected transient float secondValue;
+
+    /**
+     * Result
+     */
+    protected transient float result;
 
     /**
      * Default Constructor.
      * @param value the current value.
      */
-    public Operation(final float value) {
-        this.value = value;
+    public Operation(final float firstValue, final float secondValue) {
+        this.firstValue = firstValue;
+        this.secondValue = secondValue;
+        this.result = 0;
+
     }
 }

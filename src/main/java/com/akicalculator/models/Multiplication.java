@@ -2,25 +2,24 @@ package com.akicalculator.models;
 
 /**
  * Multiplication class
- *
  */
 public class Multiplication extends Operation {
 
     /**
      * Default Constructor.
-     * @param value value obtained from console
+     * @param firstValue of operation
+     * @param secondValue of operation
      */
-    public Multiplication(final float value) {
-        super(value);
+    public Multiplication(final float firstValue, final float secondValue) {
+        super(firstValue, secondValue);
     }
 
     /**
      * Apply multiplication
-     * @param multiValue value obtain from console
-     * @return the multiplication of b and a
+     * @return the multiplication result
      */
-    public float apply(final float multiValue) {
-        this.value *= multiValue;
-        return this.value;
+    public float apply() {
+        this.result = this.firstValue * this.secondValue;
+        return this.result;
     }
 }
