@@ -1,60 +1,32 @@
 package com.akicalculator;
 
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.akicalculator.models.Multiplication;
 
 public class TestMultiplication {
 
-	private Multiplication multi;
-	
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-		
-	}
+    private Multiplication multi;
 
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-		
-	}
+    @Before
+    public void setUp() throws Exception {
+        this.multi = new Multiplication(2);
+    }
 
-	@Before
-	public void setUp() throws Exception {
-		this.multi = new Multiplication(2);
-	}
+    @After
+    public void tearDown() throws Exception {
 
-	@After
-	public void tearDown() throws Exception {
-		
-	}
+    }
 
-	@Test
-	public void testApply() {
-		
-	     float result = this.multi.apply(3);
-	     
-	     Assert.assertEquals(6.0f, result, 0.0f);
-	}
-	
-	 @Test
-	    public void testUndo() {
-	        float result = this.multi.redo(3);
+    @Test
+    public void testApply() {
+        final float result = this.multi.apply(3);
 
-	        result = this.multi.undo();
-	        Assert.assertEquals(2.0f, result, 0.0f);
-	    }
-	 
-	 @Test
-	    public void testRedo() {
-	        float result = this.multi.redo(3);
+        Assert.assertEquals(6.0f, result, 0.0f);
+    }
 
-	        Assert.assertEquals(6.0f, result, 0.0f);
-	    }
-	
 
 }

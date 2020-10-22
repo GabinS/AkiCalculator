@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.akicalculator;
 
@@ -15,27 +15,27 @@ import com.akicalculator.models.Addition;
  *
  */
 public class TestAddition {
-	
-	private Addition add;
 
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@Before
-	public void setUp() throws Exception {
-		this.add = new Addition(3);
-	}
+    private Addition add;
 
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@After
-	public void tearDown() throws Exception {
-	}
+    /**
+     * @throws java.lang.Exception
+     */
+    @Before
+    public void setUp() throws Exception {
+        this.add = new Addition(3);
+    }
+
+    /**
+     * @throws java.lang.Exception
+     */
+    @After
+    public void tearDown() throws Exception {
+    }
 
     @Test
     public void testApply() {
-    	final float result = this.add.apply(4);
+        final float result = this.add.apply(4);
 
         Assert.assertEquals(7.0f, result, 0.0f);
     }
