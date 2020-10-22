@@ -7,21 +7,22 @@ public class Division extends Operation {
 
     /**
      * Default Constructor.
-     * @param a the current value.
+     * @param firstValue of operation
+     * @param secondValue of operation
      */
-    public Division(final float value) {
-        super(value);
+    public Division(final float firstValue, final float secondValue) {
+        super(firstValue, secondValue);
     }
 
     /**
-     * Apply addition
-     * @param addValue the value to add at current.
-     * @return the result of addition.
+     * Apply division
+     * @return the division result
      */
-    public float apply(final float divisionValue) {
-        if (0.0f != divisionValue) {
-            this.value /= divisionValue;
+    public float apply() {
+        this.result = 0;
+        if (0.0f != this.secondValue) {
+            this.result = this.firstValue / this.secondValue;
         }
-        return this.value;
+        return this.result;
     }
 }

@@ -15,6 +15,7 @@ plugins {
     id "com.github.spotbugs" version "4.5.1"
     id 'checkstyle'
     id "de.aaschmid.cpd" version "3.1"
+    id 'jacoco'
 }
 
 dependencies {
@@ -30,11 +31,11 @@ repositories {
 }
 
 test {
-	ignoreFailures = true
+    ignoreFailures = true
 }
 
 javadoc{
-	failOnError = false
+    failOnError = false
 }
 
 pmd {
@@ -62,12 +63,21 @@ spotbugs {
 }
 
 checkstyle {
-	configFile rootProject.file('config/checkstyle/checkstyle.xml')
+    configFile rootProject.file('config/checkstyle/checkstyle.xml')
 
-	ignoreFailures = true
-	showViolations = true
+    ignoreFailures = true
+    showViolations = true
 }
 cpd {
-	ignoreFailures = true
-	minimumTokenCount = 10
+    ignoreFailures = true
+    minimumTokenCount = 10
+}
+cpdCheck{
+     source = sourceSets.main.allJava
+}
+
+task zipJavadoc(type: Zip) {
+    from "/doc"
+    destinationDir = file("/dist")
+    archiveName = "java-doc.zip"
 }

@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 import com.akicalculator.models.Addition;
 import com.akicalculator.models.Division;
-import com.akicalculator.models.Substraction;
 import com.akicalculator.models.Multiplication;
+import com.akicalculator.models.Subtraction;
 
 /**
  * Navigation for menu
@@ -15,7 +15,7 @@ public class Navigation {
     /**
      * Scanner to get keyboard informations
      */
-    public final Scanner SCAN = new Scanner(System.in);
+    public static final Scanner SCAN = new Scanner(System.in);
 
     /**
      * Default constructor
@@ -25,7 +25,7 @@ public class Navigation {
     /**
      * Display menu in console
      */
-    public void printMenu () {
+    public void printMenu() {
         System.out.println("----------------------------");
         System.out.println("|      AkiCalculator       |");
         System.out.println("| Opération:               |");
@@ -42,40 +42,40 @@ public class Navigation {
      */
     public void start() {
         Boolean validMenu = false;
-        while(!validMenu) {
+        while (!validMenu) {
             System.out.print("Choix du menu : ");
-            String menuSelected = SCAN.nextLine();
+            String menuSelected = SCAN.next();
 
             switch (menuSelected) {
-            case "1":
-                System.out.println("\nAddition");
-                validMenu = true;
-                execAddition();
-                break;
-            case "2":
-                System.out.println("\nSoustraction");
-                validMenu = true;
-                execSubstraction();
-                break;
-            case "3":
-                System.out.println("\nMultiplication");
-                validMenu = true;
-                execMultiplication();
-                break;
-            case "4":
-                System.out.println("\nDivision");
-                validMenu = true;
-                execDivision();
-                break;
-            case "E":
-                System.out.println("\nVous avez quittez l'application !");
-                validMenu = true;
-                System.exit(0);
-                break;
+                case "1":
+                    System.out.println("\nAddition");
+                    validMenu = true;
+                    execOperation("+");
+                    break;
+                case "2":
+                    System.out.println("\nSoustraction");
+                    validMenu = true;
+                    execOperation("-");
+                    break;
+                case "3":
+                    System.out.println("\nMultiplication");
+                    validMenu = true;
+                    execOperation("*");
+                    break;
+                case "4":
+                    System.out.println("\nDivision");
+                    validMenu = true;
+                    execOperation("/");
+                    break;
+                case "E":
+                    System.out.println("\nVous avez quittez l'application !");
+                    validMenu = true;
+                    System.exit(0);
+                    break;
 
-            default:
-                System.out.println("\nChoix du menu invalide !");
-                break;
+                default:
+                    System.out.println("\nChoix du menu invalide !");
+                    break;
             }
 
         }
@@ -105,54 +105,35 @@ public class Navigation {
     }
 
     /**
-     * Launch Addition navigation
+     * Execute operation
+     * @param operator sign of operation
      */
-    public void execAddition() {
+    public void execOperation(String operator) {
         final float valueA = getValuekeyBoard("a");
         final float valueB = getValuekeyBoard("b");
+        float result = 0;
 
-        Addition add = new Addition(valueA);
-        final float result = add.apply(valueB);
-
-        getMessageOperation(valueA, valueB, result, "+");
+        switch (operator) {
+            case "+":
+                Addition add = new Addition(valueA, valueB);
+                result = add.apply();
+                break;
+            case "-":
+                Subtraction subtraction = new Subtraction(valueA, valueB);
+                result = subtraction.apply();
+                break;
+            case "*":
+                Multiplication multiplication = new Multiplication(valueA, valueB);
+                result = multiplication.apply();
+                break;
+            case "/":
+                Division division = new Division(valueA, valueB);
+                result = division.apply();
+                break;
+            default:
+                break;
+        }
+        getMessageOperation(valueA, valueB, result, operator);
     }
 
-    /**
-     * Launch Substraction navigation.
-     */
-    public void execSubstraction() {
-        final float valueA = getValuekeyBoard("a");
-        final float valueB = getValuekeyBoard("b");
-
-        Substraction add = new Substraction(valueA);
-        final float result = add.apply(valueB);
-
-        getMessageOperation(valueA, valueB, result, "+");
-    }
-
-    /**
-     *  Launch Multiplication navigation
-     */
-    public void execMultiplication()	{
-        final float valueA = getValuekeyBoard("a");
-        final float valueB = getValuekeyBoard("b");
-
-        Multiplication multi = new Multiplication(valueA);
-        float result = multi.apply(valueB);
-
-        getMessageOperation(valueA, valueB, result, "+");
-    }
-
-    /**
-     *  Launch Division navigation
-     */
-    public void execDivision()	{
-        final float valueA = getValuekeyBoard("a");
-        final float valueB = getValuekeyBoard("b");
-
-        Division division = new Division(valueA);
-        float result = division.apply(valueB);
-
-        getMessageOperation(valueA, valueB, result, "+");
-    }
 }
