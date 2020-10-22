@@ -1,5 +1,9 @@
 package com.akicalculator.models;
 
+/**
+ * Power class.
+ *
+ */
 public class Puissance extends Operation{
 
     /**
@@ -13,7 +17,7 @@ public class Puissance extends Operation{
 
     /**
      * Apply power
-     * @return the power result
+     * @return the result of the power
      */
     public float apply() {
         this.result = (float)Math.pow(this.firstValue,this.secondValue);
