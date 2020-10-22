@@ -7,7 +7,7 @@ import com.akicalculator.models.Division;
 import com.akicalculator.models.Multiplication;
 import com.akicalculator.models.Subtraction;
 import com.akicalculator.models.Modulo;
-import com.akicalculator.models.Puissance;
+import com.akicalculator.models.Power;
 import com.akicalculator.models.SquareRoot;
 
 /**
@@ -31,14 +31,14 @@ public class Navigation {
     public void printMenu() {
         System.out.println("----------------------------");
         System.out.println("|      AkiCalculator       |");
-        System.out.println("| Opération:               |");
+        System.out.println("| OpÃ©ration:               |");
         System.out.println("|    [1] Addition          |");
         System.out.println("|    [2] Soustraction      |");
         System.out.println("|    [3] Multiplication    |");
         System.out.println("|    [4] Division          |");
         System.out.println("|    [5] Modulo            |");
         System.out.println("|    [6] Puissance         |");
-        System.out.println("|    [7] Racine carrée     |");
+        System.out.println("|    [7] Racine carrÃ©e     |");
         System.out.println("|[E] Exit                  |");
         System.out.println("----------------------------");
     }
@@ -48,6 +48,8 @@ public class Navigation {
      */
     public void start() {
         Boolean validMenu = false;
+
+
         while (!validMenu) {
             System.out.print("Choix du menu : ");
             final String menuSelected = SCAN.next();
@@ -56,40 +58,40 @@ public class Navigation {
                 case "1":
                     System.out.println("\nAddition");
                     validMenu = true;
-                    execOperation("+");
+                    setInputValues("+");
                     break;
                 case "2":
                     System.out.println("\nSoustraction");
                     validMenu = true;
-                    execOperation("-");
+                    setInputValues("-");
                     break;
                 case "3":
                     System.out.println("\nMultiplication");
                     validMenu = true;
-                    execOperation("*");
+                    setInputValues("*");
                     break;
                 case "4":
                     System.out.println("\nDivision");
                     validMenu = true;
-                    execOperation("/");
+                    setInputValues("/");
                     break;
                 case "5":
                     System.out.println("\nModulo");
                     validMenu = true;
-                    execOperation("%");
+                    setInputValues("%");
                     break;
                 case "6":
                     System.out.println("\nPuissance");
                     validMenu = true;
-                    execOperation("^");
+                    setInputValues("^");
                     break;
                 case "7":
-                    System.out.println("\nRacine carrée");
+                    System.out.println("\nRacine carrÃ©e");
                     validMenu = true;
-                    execOperation("V");
+                    setInputValue("V");
                     break;
                 case "E":
-                    System.out.println("\nVous avez quitté l'application !");
+                    System.out.println("\nVous avez quittÃ© l'application !");
                     validMenu = true;
                     System.exit(0);
                     break;
@@ -117,13 +119,7 @@ public class Navigation {
      * Execute operation
      * @param operator sign of operation
      */
-    public void execOperation(final String operator) {
-        final float valueA = getValuekeyBoard("a");
-        float valueB = 0.0f;
-
-        if(operator != "V") {
-           valueB = getValuekeyBoard("b");
-        }
+    public void execOperation(String operator, float valueA, float valueB) {
 
         switch (operator) {
             case "+":
@@ -156,9 +152,9 @@ public class Navigation {
                 modulo.printMessageOperation();
                 break;
             case "^":
-                Puissance puissance = new Puissance(valueA, valueB);
-                puissance.apply();
-                puissance.printMessageOperation();
+                Power power = new Power(valueA, valueB);
+                power.apply();
+                power.printMessageOperation();
                 break;
             case "V":
                 SquareRoot squareRoot = new SquareRoot(valueA);
@@ -169,5 +165,20 @@ public class Navigation {
                 break;
         }
     }
+
+    public void setInputValues(String operator)
+    {
+       final float valueA = getValuekeyBoard("a");
+       final float valueB = getValuekeyBoard("b");
+
+        execOperation(operator, valueA, valueB);
+    }
+
+    public void setInputValue(String operator)
+    {
+        final float valueA = getValuekeyBoard("a");
+        execOperation(operator, valueA, 0);
+    }
+
 
 }
