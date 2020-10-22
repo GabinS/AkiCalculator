@@ -71,4 +71,11 @@ checkstyle {
 cpd {
     ignoreFailures = true
     minimumTokenCount = 10
+    exclude '**Test*'
+}
+
+task zipJavadoc(type: Zip) {
+    from "/doc"
+    destinationDir = file("/dist")
+    archiveName = "java-doc.zip"
 }
