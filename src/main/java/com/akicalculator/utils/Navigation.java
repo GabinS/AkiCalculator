@@ -23,7 +23,7 @@ public class Navigation {
     /**
      * Default constructor
      */
-    public Navigation() { }
+    public Navigation() {}
 
     /**
      * Display menu in console
@@ -31,14 +31,14 @@ public class Navigation {
     public void printMenu() {
         System.out.println("----------------------------");
         System.out.println("|      AkiCalculator       |");
-        System.out.println("| Opération:               |");
+        System.out.println("| OpÃ©ration:               |");
         System.out.println("|    [1] Addition          |");
         System.out.println("|    [2] Soustraction      |");
         System.out.println("|    [3] Multiplication    |");
         System.out.println("|    [4] Division          |");
         System.out.println("|    [5] Modulo            |");
         System.out.println("|    [6] Puissance         |");
-        System.out.println("|    [7] Racine carrée     |");
+        System.out.println("|    [7] Racine carrÃ©e     |");
         System.out.println("|[E] Exit                  |");
         System.out.println("----------------------------");
     }
@@ -52,7 +52,7 @@ public class Navigation {
 
         while (!validMenu) {
             System.out.print("Choix du menu : ");
-            String menuSelected = SCAN.next();
+            final String menuSelected = SCAN.next();
 
             switch (menuSelected) {
                 case "1":
@@ -86,12 +86,12 @@ public class Navigation {
                     setInputValues("^");
                     break;
                 case "7":
-                    System.out.println("\nRacine carrée");
+                    System.out.println("\nRacine carrÃ©e");
                     validMenu = true;
                     setInputValue("V");
                     break;
                 case "E":
-                    System.out.println("\nVous avez quitté l'application !");
+                    System.out.println("\nVous avez quittÃ© l'application !");
                     validMenu = true;
                     System.exit(0);
                     break;
@@ -109,7 +109,7 @@ public class Navigation {
      * @param letter is display for the value
      * @return value
      */
-    public float getValuekeyBoard(String letter) {
+    public float getValuekeyBoard(final String letter) {
         System.out.print(letter + " = ");
         final float value = SCAN.nextFloat();
         return value;
@@ -123,17 +123,17 @@ public class Navigation {
 
         switch (operator) {
             case "+":
-                Addition addition = new Addition(valueA, valueB);
+                final Addition addition = new Addition(valueA, valueB);
                 addition.apply();
                 addition.printMessageOperation();
                 break;
             case "-":
-                Subtraction subtraction = new Subtraction(valueA, valueB);
+                final Subtraction subtraction = new Subtraction(valueA, valueB);
                 subtraction.apply();
                 subtraction.printMessageOperation();
                 break;
             case "*":
-                Multiplication multiplication = new Multiplication(valueA, valueB);
+                final Multiplication multiplication = new Multiplication(valueA, valueB);
                 multiplication.apply();
                 multiplication.printMessageOperation();
                 break;
@@ -141,7 +141,7 @@ public class Navigation {
                 if (0.0f != valueB) {
                     System.out.println("Impossible de faire une division par 0");
                 } else {
-                    Division division = new Division(valueA, valueB);
+                    final Division division = new Division(valueA, valueB);
                     division.apply();
                     division.printMessageOperation();
                 }

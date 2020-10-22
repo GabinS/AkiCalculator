@@ -3,8 +3,8 @@ package com.akicalculator.models;
 /**
  * Square Root
  */
-public class SquareRoot extends Operation{
-
+public class SquareRoot extends Operation {
+  
     /**
      * Default Constructor.
      * @param firstValue of operation
@@ -14,8 +14,8 @@ public class SquareRoot extends Operation{
     }
 
     /**
-     * Apply squareroot
-     * @return the squareroot result
+     * Apply square root.
+     * @return the square root result
      */
     public float apply() {
         this.result = (float) Math.sqrt(this.firstValue) ;
