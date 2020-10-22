@@ -25,7 +25,7 @@ public class Navigation {
     /**
      * Display menu in console
      */
-    public void printMenu () {
+    public void printMenu() {
         System.out.println("----------------------------");
         System.out.println("|      AkiCalculator       |");
         System.out.println("| Opération:               |");
@@ -42,40 +42,40 @@ public class Navigation {
      */
     public void start() {
         Boolean validMenu = false;
-        while(!validMenu) {
+        while (!validMenu) {
             System.out.print("Choix du menu : ");
             String menuSelected = SCAN.nextLine();
 
             switch (menuSelected) {
-            case "1":
-                System.out.println("\nAddition");
-                validMenu = true;
-                execAddition();
-                break;
-            case "2":
-                System.out.println("\nSoustraction");
-                validMenu = true;
-                execSubstraction();
-                break;
-            case "3":
-                System.out.println("\nMultiplication");
-                validMenu = true;
-                execMultiplication();
-                break;
-            case "4":
-                System.out.println("\nDivision");
-                validMenu = true;
-                execDivision();
-                break;
-            case "E":
-                System.out.println("\nVous avez quittez l'application !");
-                validMenu = true;
-                System.exit(0);
-                break;
+                case "1":
+                    System.out.println("\nAddition");
+                    validMenu = true;
+                    execAddition();
+                    break;
+                case "2":
+                    System.out.println("\nSoustraction");
+                    validMenu = true;
+                    execSubstraction();
+                    break;
+                case "3":
+                    System.out.println("\nMultiplication");
+                    validMenu = true;
+                    execMultiplication();
+                    break;
+                case "4":
+                    System.out.println("\nDivision");
+                    validMenu = true;
+                    execDivision();
+                    break;
+                case "E":
+                    System.out.println("\nVous avez quittez l'application !");
+                    validMenu = true;
+                    System.exit(0);
+                    break;
 
-            default:
-                System.out.println("\nChoix du menu invalide !");
-                break;
+                default:
+                    System.out.println("\nChoix du menu invalide !");
+                    break;
             }
 
         }
@@ -133,7 +133,7 @@ public class Navigation {
     /**
      *  Launch Multiplication navigation
      */
-    public void execMultiplication()	{
+    public void execMultiplication() {
         final float valueA = getValuekeyBoard("a");
         final float valueB = getValuekeyBoard("b");
 
@@ -146,7 +146,7 @@ public class Navigation {
     /**
      *  Launch Division navigation
      */
-    public void execDivision()	{
+    public void execDivision() {
         final float valueA = getValuekeyBoard("a");
         final float valueB = getValuekeyBoard("b");
 
