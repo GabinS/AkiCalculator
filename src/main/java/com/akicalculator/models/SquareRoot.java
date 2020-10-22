@@ -4,7 +4,7 @@ package com.akicalculator.models;
  * Square Root
  */
 public class SquareRoot extends Operation {
-  
+
     /**
      * Default Constructor.
      * @param firstValue of operation
@@ -26,9 +26,8 @@ public class SquareRoot extends Operation {
      * Display operation in console
      */
     @Override
-    public void printMessageOperation() {
-        final String msg = this.operator + this.firstValue + " = " + this.result + "\n";
-        System.out.println(msg);
+    public String getMessageOperation() {
+        return this.operator + this.firstValue + " = " + this.result + "\n";
     }
 
 }

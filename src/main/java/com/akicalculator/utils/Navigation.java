@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import com.akicalculator.models.Addition;
 import com.akicalculator.models.Division;
+import com.akicalculator.models.History;
 import com.akicalculator.models.Modulo;
 import com.akicalculator.models.Multiplication;
 import com.akicalculator.models.Power;
@@ -21,9 +22,16 @@ public class Navigation {
     public static final Scanner SCAN = new Scanner(System.in);
 
     /**
+     * History of operation
+     */
+    private final History history;
+
+    /**
      * Default constructor
      */
-    public Navigation() {}
+    public Navigation() {
+        this.history = History.getInstance();
+    }
 
     /**
      * Display menu in console
@@ -31,14 +39,15 @@ public class Navigation {
     public void printMenu() {
         System.out.println("----------------------------");
         System.out.println("|      AkiCalculator       |");
-        System.out.println("| Opération:               |");
+        System.out.println("| Operation:               |");
         System.out.println("|    [1] Addition          |");
         System.out.println("|    [2] Soustraction      |");
         System.out.println("|    [3] Multiplication    |");
         System.out.println("|    [4] Division          |");
         System.out.println("|    [5] Modulo            |");
         System.out.println("|    [6] Puissance         |");
-        System.out.println("|    [7] Racine carrée     |");
+        System.out.println("|    [7] Racine carree     |");
+        System.out.println("|[H] Historique            |");
         System.out.println("|[E] Exit                  |");
         System.out.println("----------------------------");
     }
@@ -86,12 +95,17 @@ public class Navigation {
                     setInputValues("^");
                     break;
                 case "7":
-                    System.out.println("\nRacine carrée");
+                    System.out.println("\nRacine carree");
                     validMenu = true;
                     setInputValue("V");
                     break;
+                case "H":
+                    System.out.println("\nHistorique ");
+                    validMenu = true;
+                    System.out.println(this.history.toString());
+                    break;
                 case "E":
-                    System.out.println("\nVous avez quitté l'application !");
+                    System.out.println("\nVous avez quitte l'application !");
                     validMenu = true;
                     System.exit(0);
                     break;
@@ -100,7 +114,6 @@ public class Navigation {
                     System.out.println("\nChoix du menu invalide !");
                     break;
             }
-
         }
     }
 
@@ -120,49 +133,53 @@ public class Navigation {
      * @param operator sign of operation
      */
     public void execOperation(String operator, float valueA, float valueB) {
-
+        String resultOperation = "";
         switch (operator) {
             case "+":
                 final Addition addition = new Addition(valueA, valueB);
                 addition.apply();
-                addition.printMessageOperation();
+                resultOperation = addition.getMessageOperation();
                 break;
             case "-":
                 final Subtraction subtraction = new Subtraction(valueA, valueB);
                 subtraction.apply();
-                subtraction.printMessageOperation();
+                resultOperation = subtraction.getMessageOperation();
                 break;
             case "*":
                 final Multiplication multiplication = new Multiplication(valueA, valueB);
                 multiplication.apply();
-                multiplication.printMessageOperation();
+                resultOperation = multiplication.getMessageOperation();
                 break;
             case "/":
                 if (0.0f != valueB) {
-                    System.out.println("Impossible de faire une division par 0");
-                } else {
                     final Division division = new Division(valueA, valueB);
                     division.apply();
-                    division.printMessageOperation();
+                    resultOperation = division.getMessageOperation();
+                } else {
+                    System.out.println("Impossible de faire une division par 0");
                 }
                 break;
             case "%":
                 Modulo modulo = new Modulo(valueA, valueB);
                 modulo.apply();
-                modulo.printMessageOperation();
+                resultOperation = modulo.getMessageOperation();
                 break;
             case "^":
                 Power power = new Power(valueA, valueB);
                 power.apply();
-                power.printMessageOperation();
+                resultOperation = power.getMessageOperation();
                 break;
             case "V":
                 SquareRoot squareRoot = new SquareRoot(valueA);
                 squareRoot.apply();
-                squareRoot.printMessageOperation();
+                resultOperation = squareRoot.getMessageOperation();
                 break;
             default:
                 break;
+        }
+        if (0 != resultOperation.length()) {
+            System.out.println(resultOperation);
+            this.history.add(resultOperation);
         }
     }
 
