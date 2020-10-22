@@ -16,6 +16,7 @@ plugins {
     id 'checkstyle'
     id "de.aaschmid.cpd" version "3.1"
     id 'jacoco'
+    id 'ru.vyarus.animalsniffer' version '1.5.1'
 }
 
 dependencies {
@@ -80,4 +81,8 @@ task zipJavadoc(type: Zip) {
     from "/doc"
     destinationDir = file("/dist")
     archiveName = "java-doc.zip"
+}
+
+animalsniffer {
+    sourceSets = [sourceSets.main]
 }
