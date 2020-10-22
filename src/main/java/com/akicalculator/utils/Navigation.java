@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 import com.akicalculator.models.Addition;
 import com.akicalculator.models.Division;
-import com.akicalculator.models.Multiplication;
-import com.akicalculator.models.Subtraction;
 import com.akicalculator.models.Modulo;
+import com.akicalculator.models.Multiplication;
 import com.akicalculator.models.Power;
 import com.akicalculator.models.SquareRoot;
+import com.akicalculator.models.Subtraction;
 
 /**
  * Navigation for menu
@@ -166,16 +166,22 @@ public class Navigation {
         }
     }
 
-    public void setInputValues(String operator)
-    {
-       final float valueA = getValuekeyBoard("a");
-       final float valueB = getValuekeyBoard("b");
+    /**
+     * Set input values.
+     * @param operator the sign of the operator.
+     */
+    public void setInputValues(String operator) {
+        final float valueA = getValuekeyBoard("a");
+        final float valueB = getValuekeyBoard("b");
 
         execOperation(operator, valueA, valueB);
     }
 
-    public void setInputValue(String operator)
-    {
+    /**
+     * Set input values.
+     * @param operator the sign of the operator.
+     */
+    public void setInputValue(String operator) {
         final float valueA = getValuekeyBoard("a");
         execOperation(operator, valueA, 0);
     }

@@ -3,7 +3,7 @@ package com.akicalculator.models;
 /**
  * Modulo class.
  */
-public class Modulo extends Operation{
+public class Modulo extends Operation {
 
     /**
      * Default Constructor.
