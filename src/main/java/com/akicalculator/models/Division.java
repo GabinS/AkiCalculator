@@ -19,9 +19,9 @@ public class Division extends Operation {
      * @return the result of addition.
      */
     public float apply(final float divisionValue) {
-    	if (0.0f != divisionValue) {
+        if (0.0f != divisionValue) {
             this.value /= divisionValue;
-		}
+        }
         return this.value;
     }
 }

@@ -13,11 +13,13 @@ plugins {
     id 'idea'
     id 'pmd'
     id "com.github.spotbugs" version "4.5.1"
+    id 'checkstyle'
     id "de.aaschmid.cpd" version "3.1"
 }
 
 dependencies {
   testCompile 'junit:junit:4.12'
+ // compile 'com.puppycrawl.tools:checkstyle:8.36.2'
 }
 
 // In this section you declare where to find the dependencies of your project
@@ -59,7 +61,13 @@ spotbugs {
     showProgress = false
 }
 
-cpd{
+checkstyle {
+	configFile rootProject.file('config/checkstyle/checkstyle.xml')
+
+	ignoreFailures = true
+	showViolations = true
+}
+cpd {
 	ignoreFailures = true
 	minimumTokenCount = 10
 }

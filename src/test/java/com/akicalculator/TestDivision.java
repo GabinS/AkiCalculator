@@ -9,31 +9,31 @@ import com.akicalculator.models.Division;
 
 public class TestDivision {
 
-	private Division division;
+    private Division division;
 
-	@Before
-	public void setUp() throws Exception {
-		this.division = new Division(12);
-	}
+    @Before
+    public void setUp() throws Exception {
+        this.division = new Division(12);
+    }
 
-	@After
-	public void tearDown() throws Exception {
-		
-	}
-	
-	@Test
-	public void testApplyByZero() {
-		final float result = this.division.apply(0);
+    @After
+    public void tearDown() throws Exception {
 
-		Assert.assertEquals(12.0f, result, 0.0f);
-	}
+    }
 
-	@Test
-	public void testApply() {		
-		final float result = this.division.apply(3);
-	     
-		Assert.assertEquals(4.0f, result, 0.0f);
-	}
-	
+    @Test
+    public void testApplyByZero() {
+        final float result = this.division.apply(0);
+
+        Assert.assertEquals(12.0f, result, 0.0f);
+    }
+
+    @Test
+    public void testApply() {
+        final float result = this.division.apply(3);
+
+        Assert.assertEquals(4.0f, result, 0.0f);
+    }
+
 
 }

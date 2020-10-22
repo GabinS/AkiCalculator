@@ -9,24 +9,24 @@ import com.akicalculator.models.Multiplication;
 
 public class TestMultiplication {
 
-	private Multiplication multi;
+    private Multiplication multi;
 
-	@Before
-	public void setUp() throws Exception {
-		this.multi = new Multiplication(2);
-	}
+    @Before
+    public void setUp() throws Exception {
+        this.multi = new Multiplication(2);
+    }
 
-	@After
-	public void tearDown() throws Exception {
-		
-	}
+    @After
+    public void tearDown() throws Exception {
 
-	@Test
-	public void testApply() {
-		final float result = this.multi.apply(3);
-	     
-	    Assert.assertEquals(6.0f, result, 0.0f);
-	}
-	
+    }
+
+    @Test
+    public void testApply() {
+        final float result = this.multi.apply(3);
+
+        Assert.assertEquals(6.0f, result, 0.0f);
+    }
+
 
 }
