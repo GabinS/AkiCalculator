@@ -88,4 +88,20 @@ public class TestNavigation {
 
     }
 
+    /**
+     * Test method for {@link com.akicalculator.utils.Navigation#selectMenu(java.lang.String)}.
+     */
+    @Test
+    public void testselectMenu() {
+
+        this.nav.selectMenu("1");
+        this.nav.selectMenu("2");
+        this.nav.selectMenu("3");
+        this.nav.selectMenu("4");
+        this.nav.selectMenu("5");
+        this.nav.selectMenu("6");
+        this.nav.selectMenu("7");
+
+    }
+
 }
