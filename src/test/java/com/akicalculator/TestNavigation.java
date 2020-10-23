@@ -23,14 +23,6 @@ public class TestNavigation {
     }
 
     /**
-     * Test method for {@link com.akicalculator.utils.Navigation#Navigation()}.
-     */
-    @Test
-    public void testNavigation() {
-
-    }
-
-    /**
      * Test method for {@link com.akicalculator.utils.Navigation#printMenu()}.
      */
     @Test
@@ -71,6 +63,14 @@ public class TestNavigation {
     }
 
     /**
+     * Test method for {@link com.akicalculator.utils.Navigation#saveValueMemory(java.lang.String)}.
+     */
+    @Test
+    public void testSaveValueMemory() {
+        this.nav.saveValueMemory();
+    }
+
+    /**
      * Test method for {@link com.akicalculator.utils.Navigation#execOperation(java.lang.String)}.
      */
     @Test
@@ -90,7 +90,7 @@ public class TestNavigation {
      * Test method for {@link com.akicalculator.utils.Navigation#selectMenu(java.lang.String)}.
      */
     @Test
-    public void testselectMenu() {
+    public void testSelectMenu() {
 
         this.nav.selectMenu("1");
         this.nav.selectMenu("2");
@@ -99,9 +99,6 @@ public class TestNavigation {
         this.nav.selectMenu("5");
         this.nav.selectMenu("6");
         this.nav.selectMenu("7");
-        this.nav.selectMenu("M");
-        this.nav.selectMenu("H");
-        this.nav.selectMenu("Q");
 
     }
 
