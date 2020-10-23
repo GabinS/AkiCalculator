@@ -11,9 +11,9 @@ public class Application {
      * Entry-point of application.
      */
     public static void main(final String[] args) {
+        final Navigation navigation = new Navigation();
         while (true) {
             System.out.flush();
-            final Navigation navigation = new Navigation();
             navigation.printMenu();
             navigation.start();
         }

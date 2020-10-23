@@ -1,14 +1,12 @@
 package com.akicalculator;
 
-import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import com.akicalculator.utils.Navigation;
 
 /**
- * @author Joris Guerrier
+ * TestNavigation
  *
  */
 public class TestNavigation {
@@ -25,14 +23,6 @@ public class TestNavigation {
     }
 
     /**
-     * Method called after each method containing a test
-     * @throws java.lang.Exception exception generated
-     */
-    @After
-    public void tearDown() throws Exception {
-    }
-
-    /**
      * Test method for {@link com.akicalculator.utils.Navigation#Navigation()}.
      */
     @Test
@@ -45,7 +35,7 @@ public class TestNavigation {
      */
     @Test
     public void testPrintMenu() {
-
+        this.nav.printMenu();
     }
 
     /**
@@ -53,7 +43,7 @@ public class TestNavigation {
      */
     @Test
     public void testStart() {
-
+        this.nav.start();
     }
 
     /**
@@ -61,15 +51,23 @@ public class TestNavigation {
      */
     @Test
     public void testGetValuekeyBoard() {
-
+        this.nav.getValuekeyBoard("a");
     }
 
     /**
-     * Test method for {@link com.akicalculator.utils.Navigation#getMessageOperation(float, float, float, String)}.
+     * Test method for {@link com.akicalculator.utils.Navigation#setInputValues(java.lang.String)}.
      */
     @Test
-    public void testGetMessageOperation() {
+    public void testSetInputValues() {
+        this.nav.setInputValues("+");
+    }
 
+    /**
+     * Test method for {@link com.akicalculator.utils.Navigation#setInputValue(java.lang.String)}.
+     */
+    @Test
+    public void testSetInputValue() {
+        this.nav.setInputValue("+");
     }
 
     /**
@@ -101,6 +99,9 @@ public class TestNavigation {
         this.nav.selectMenu("5");
         this.nav.selectMenu("6");
         this.nav.selectMenu("7");
+        this.nav.selectMenu("M");
+        this.nav.selectMenu("H");
+        this.nav.selectMenu("Q");
 
     }
 

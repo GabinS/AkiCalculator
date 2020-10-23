@@ -21,12 +21,28 @@ public class TestHistory {
     }
 
     /**
+     *Test method for {@link com.akicalculator.models.History#toString()}
+     */
+    @Test
+    public void testToString() {
+        this.history.toString();
+    }
+
+    /**
      *Test method for {@link com.akicalculator.models.History#add()}
      */
     @Test
     public void testAdd() {
         this.history.add("test");
         assertTrue(1 == this.history.getList().size());
+    }
+
+    /**
+     *Test method for {@link com.akicalculator.models.History#toString()}
+     */
+    @Test
+    public void testToStringAfterAdd() {
+        this.history.toString();
     }
 
 }
