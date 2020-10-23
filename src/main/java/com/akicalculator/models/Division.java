@@ -7,11 +7,11 @@ public class Division extends Operation {
 
     /**
      * Default Constructor.
-     * @param firstValue of operation
-     * @param secondValue of operation
+     * @param firstValueDiv of operation
+     * @param secondValueDiv of operation
      */
-    public Division(final float firstValue, final float secondValue) {
-        super(firstValue, secondValue, "/");
+    public Division(final float firstValueDiv, final float secondValueDiv) {
+        super(firstValueDiv, secondValueDiv, "/");
     }
 
     /**

@@ -1,14 +1,13 @@
 package com.akicalculator;
 
-import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.akicalculator.utils.Navigation;
 
 /**
- * @author Joris Guerrier
+ * TestNavigation
  *
  */
 public class TestNavigation {
@@ -25,51 +24,56 @@ public class TestNavigation {
     }
 
     /**
-     * Method called after each method containing a test
-     * @throws java.lang.Exception exception generated
-     */
-    @After
-    public void tearDown() throws Exception {
-    }
-
-    /**
-     * Test method for {@link com.akicalculator.utils.Navigation#Navigation()}.
-     */
-    @Test
-    public void testNavigation() {
-
-    }
-
-    /**
      * Test method for {@link com.akicalculator.utils.Navigation#printMenu()}.
      */
     @Test
     public void testPrintMenu() {
-
+        this.nav.printMenu();
     }
 
     /**
      * Test method for {@link com.akicalculator.utils.Navigation#start()}.
      */
     @Test
+    @Ignore
     public void testStart() {
-
+        this.nav.start();
     }
 
     /**
      * Test method for {@link com.akicalculator.utils.Navigation#getValuekeyBoard(java.lang.String)}.
      */
     @Test
+    @Ignore
     public void testGetValuekeyBoard() {
-
+        this.nav.getValuekeyBoard("a");
     }
 
     /**
-     * Test method for {@link com.akicalculator.utils.Navigation#getMessageOperation(float, float, float, String)}.
+     * Test method for {@link com.akicalculator.utils.Navigation#setInputValues(java.lang.String)}.
      */
     @Test
-    public void testGetMessageOperation() {
+    @Ignore
+    public void testSetInputValues() {
+        this.nav.setInputValues("+");
+    }
 
+    /**
+     * Test method for {@link com.akicalculator.utils.Navigation#setInputValue(java.lang.String)}.
+     */
+    @Test
+    @Ignore
+    public void testSetInputValue() {
+        this.nav.setInputValue("+");
+    }
+
+    /**
+     * Test method for {@link com.akicalculator.utils.Navigation#saveValueMemory(java.lang.String)}.
+     */
+    @Test
+    @Ignore
+    public void testSaveValueMemory() {
+        this.nav.saveValueMemory();
     }
 
     /**
@@ -82,9 +86,12 @@ public class TestNavigation {
         this.nav.execOperation("-", 4, 2);
         this.nav.execOperation("*", 4, 2);
         this.nav.execOperation("/", 4, 2);
+        this.nav.execOperation("/", 4, 0);
         this.nav.execOperation("%", 4, 2);
         this.nav.execOperation("^", 4, 2);
         this.nav.execOperation("V", 4, 2);
+
+        this.nav.execOperation("x", 4, 2);
 
     }
 
@@ -92,7 +99,8 @@ public class TestNavigation {
      * Test method for {@link com.akicalculator.utils.Navigation#selectMenu(java.lang.String)}.
      */
     @Test
-    public void testselectMenu() {
+    @Ignore
+    public void testSelectMenu() {
 
         this.nav.selectMenu("1");
         this.nav.selectMenu("2");
@@ -101,6 +109,9 @@ public class TestNavigation {
         this.nav.selectMenu("5");
         this.nav.selectMenu("6");
         this.nav.selectMenu("7");
+        this.nav.selectMenu("M");
+        this.nav.selectMenu("H");
+        this.nav.selectMenu("Q");
 
     }
 

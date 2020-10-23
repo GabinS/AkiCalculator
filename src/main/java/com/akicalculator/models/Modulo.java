@@ -7,11 +7,11 @@ public class Modulo extends Operation {
 
     /**
      * Default Constructor.
-     * @param firstValue of operation
-     * @param secondValue of operation
+     * @param firstValueMod of operation
+     * @param secondValueMod of operation
      */
-    public Modulo(final float firstValue, final float secondValue) {
-        super(firstValue, secondValue, "%");
+    public Modulo(final float firstValueMod, final float secondValueMod) {
+        super(firstValueMod, secondValueMod, "%");
     }
 
     /**

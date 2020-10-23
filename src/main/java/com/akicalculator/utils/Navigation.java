@@ -27,10 +27,16 @@ public class Navigation {
     private final transient History history;
 
     /**
+     * History of operation
+     */
+    private transient float memory;
+
+    /**
      * Default constructor
      */
     public Navigation() {
         this.history = History.getInstance();
+        this.memory = 0;
     }
 
     /**
@@ -47,8 +53,9 @@ public class Navigation {
         System.out.println("|    [5] Modulo            |");
         System.out.println("|    [6] Puissance         |");
         System.out.println("|    [7] Racine carree     |");
+        System.out.println("|[M] Memorisation valeur   |");
         System.out.println("|[H] Historique            |");
-        System.out.println("|[E] Exit                  |");
+        System.out.println("|[Q] Quitter               |");
         System.out.println("----------------------------");
     }
 
@@ -69,6 +76,7 @@ public class Navigation {
      * @param menuSelected menu selection
      * @return true if menu selected is valid
      */
+    @SuppressWarnings({"PMD.CyclomaticComplexity", "PMD.StdCyclomaticComplexity"})
     public Boolean selectMenu(final String menuSelected) {
         switch (menuSelected) {
             case "1":
@@ -99,11 +107,17 @@ public class Navigation {
                 System.out.println("\nRacine carree");
                 setInputValue("V");
                 break;
+            case "M":
+                System.out.println("\nMemorisation valeur");
+                System.out.println("Vous pourrez utiliser la touche M pour utiliser "
+                        + "la valeur enregistree lors de vos prochains calculs");
+                this.saveValueMemory();
+                break;
             case "H":
                 System.out.println("\nHistorique ");
                 System.out.println(this.history.toString());
                 break;
-            case "E":
+            case "Q":
                 System.out.println("\nVous avez quitte l'application !");
                 System.exit(0);
                 break;
@@ -121,14 +135,24 @@ public class Navigation {
      */
     public float getValuekeyBoard(final String letter) {
         System.out.print(letter + " = ");
-        final float value = SCAN.nextFloat();
+        String valueStr = SCAN.next();
+        float value = 0;
+        if (valueStr.equals("M")) {
+            value = this.memory;
+        } else {
+            valueStr = valueStr.replace(',', '.');
+            value = Float.parseFloat(valueStr);
+        }
         return value;
     }
 
     /**
      * Execute operation
      * @param operator sign of operation
+     * @param valueA first value
+     * @param valueB second value
      */
+    @SuppressWarnings({"PMD.DataflowAnomalyAnalysis","PMD.CyclomaticComplexity", "PMD.StdCyclomaticComplexity"})
     public void execOperation(final String operator, final float valueA, final float valueB) {
         String resultOperation = "";
         switch (operator) {
@@ -182,20 +206,28 @@ public class Navigation {
 
     /**
      * Set input values.
-     * @param operator the sign of the operator.
+     * @param operatorTwoValues the sign of the operator.
      */
-    public void setInputValues(final String operator) {
+    public void setInputValues(final String operatorTwoValues) {
         final float valueA = getValuekeyBoard("a");
         final float valueB = getValuekeyBoard("b");
-        execOperation(operator, valueA, valueB);
+        execOperation(operatorTwoValues, valueA, valueB);
     }
+
     /**
      * Set input values.
-     * @param operator the sign of the operator.
+     * @param operatorOneValue the sign of the operator.
      */
-    public void setInputValue(final String operator) {
+    public void setInputValue(final String operatorOneValue) {
         final float valueA = getValuekeyBoard("a");
-        execOperation(operator, valueA, 0);
+        execOperation(operatorOneValue, valueA, 0);
+    }
+
+    /**
+     * Save memory value
+     */
+    public void saveValueMemory() {
+        this.memory = getValuekeyBoard("M");
     }
 
 

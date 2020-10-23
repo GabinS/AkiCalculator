@@ -8,11 +8,11 @@ public class Subtraction extends Operation {
 
     /**
      * Default Constructor.
-     * @param firstValue of operation
-     * @param secondValue of operation
+     * @param firstValueSub of operation
+     * @param secondValueSub of operation
      */
-    public Subtraction(final float firstValue, final float secondValue) {
-        super(firstValue, secondValue, "-");
+    public Subtraction(final float firstValueSub, final float secondValueSub) {
+        super(firstValueSub, secondValueSub, "-");
     }
 
     /**

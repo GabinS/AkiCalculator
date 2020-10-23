@@ -7,10 +7,10 @@ public class SquareRoot extends Operation {
 
     /**
      * Default Constructor.
-     * @param firstValue of operation
+     * @param firstValueSqu of operation
      */
-    public SquareRoot(final float firstValue) {
-        super(firstValue, 0, "V");
+    public SquareRoot(final float firstValueSqu) {
+        super(firstValueSqu, 0, "V");
     }
 
     /**
