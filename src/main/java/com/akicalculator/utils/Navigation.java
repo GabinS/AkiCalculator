@@ -116,7 +116,7 @@ public class Navigation {
                 System.out.println("\nHistorique ");
                 System.out.println(this.history.toString());
                 break;
-            case "E":
+            case "Q":
                 System.out.println("\nVous avez quitte l'application !");
                 System.exit(0);
                 break;
