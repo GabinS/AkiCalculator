@@ -1,6 +1,7 @@
 package com.akicalculator;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.akicalculator.utils.Navigation;
@@ -34,6 +35,7 @@ public class TestNavigation {
      * Test method for {@link com.akicalculator.utils.Navigation#start()}.
      */
     @Test
+    @Ignore
     public void testStart() {
         this.nav.start();
     }
@@ -42,6 +44,7 @@ public class TestNavigation {
      * Test method for {@link com.akicalculator.utils.Navigation#getValuekeyBoard(java.lang.String)}.
      */
     @Test
+    @Ignore
     public void testGetValuekeyBoard() {
         this.nav.getValuekeyBoard("a");
     }
@@ -50,6 +53,7 @@ public class TestNavigation {
      * Test method for {@link com.akicalculator.utils.Navigation#setInputValues(java.lang.String)}.
      */
     @Test
+    @Ignore
     public void testSetInputValues() {
         this.nav.setInputValues("+");
     }
@@ -58,6 +62,7 @@ public class TestNavigation {
      * Test method for {@link com.akicalculator.utils.Navigation#setInputValue(java.lang.String)}.
      */
     @Test
+    @Ignore
     public void testSetInputValue() {
         this.nav.setInputValue("+");
     }
@@ -66,6 +71,7 @@ public class TestNavigation {
      * Test method for {@link com.akicalculator.utils.Navigation#saveValueMemory(java.lang.String)}.
      */
     @Test
+    @Ignore
     public void testSaveValueMemory() {
         this.nav.saveValueMemory();
     }
@@ -90,6 +96,7 @@ public class TestNavigation {
      * Test method for {@link com.akicalculator.utils.Navigation#selectMenu(java.lang.String)}.
      */
     @Test
+    @Ignore
     public void testSelectMenu() {
 
         this.nav.selectMenu("1");
@@ -99,6 +106,9 @@ public class TestNavigation {
         this.nav.selectMenu("5");
         this.nav.selectMenu("6");
         this.nav.selectMenu("7");
+        this.nav.selectMenu("M");
+        this.nav.selectMenu("H");
+        this.nav.selectMenu("Q");
 
     }
 
