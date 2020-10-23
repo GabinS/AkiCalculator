@@ -186,19 +186,19 @@ public class Navigation {
      * Set input values.
      * @param operator the sign of the operator.
      */
-    public void setInputValues(final String operator) {
+    public void setInputValues(final String operatorTwoValues) {
         final float valueA = getValuekeyBoard("a");
         final float valueB = getValuekeyBoard("b");
-        execOperation(operator, valueA, valueB);
+        execOperation(operatorTwoValues, valueA, valueB);
     }
 
     /**
      * Set input values.
      * @param operator the sign of the operator.
      */
-    public void setInputValue(final String operator) {
+    public void setInputValue(final String operatorOneValue) {
         final float valueA = getValuekeyBoard("a");
-        execOperation(operator, valueA, 0);
+        execOperation(operatorOneValue, valueA, 0);
     }
 
 
