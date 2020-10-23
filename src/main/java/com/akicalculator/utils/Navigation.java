@@ -5,11 +5,11 @@ import java.util.Scanner;
 import com.akicalculator.models.Addition;
 import com.akicalculator.models.Division;
 import com.akicalculator.models.History;
-import com.akicalculator.models.Multiplication;
-import com.akicalculator.models.Subtraction;
 import com.akicalculator.models.Modulo;
+import com.akicalculator.models.Multiplication;
 import com.akicalculator.models.Power;
 import com.akicalculator.models.SquareRoot;
+import com.akicalculator.models.Subtraction;
 
 /**
  * Navigation for menu
@@ -24,7 +24,7 @@ public class Navigation {
     /**
      * History of operation
      */
-    private transient final History history;
+    private final transient History history;
 
     /**
      * Default constructor
@@ -66,50 +66,50 @@ public class Navigation {
 
     /**
      * Select Menu
-     * @param menuSelected
+     * @param menuSelected menu selection
      * @return true if menu selected is valid
      */
     public Boolean selectMenu(final String menuSelected) {
         switch (menuSelected) {
-        case "1":
-            System.out.println("\nAddition");
-            setInputValues("+");
-            break;
-        case "2":
-            System.out.println("\nSoustraction");
-            setInputValues("-");
-            break;
-        case "3":
-            System.out.println("\nMultiplication");
-            setInputValues("*");
-            break;
-        case "4":
-            System.out.println("\nDivision");
-            setInputValues("/");
-            break;
-        case "5":
-            System.out.println("\nModulo");
-            setInputValues("%");
-            break;
-        case "6":
-            System.out.println("\nPuissance");
-            setInputValues("^");
-            break;
-        case "7":
-            System.out.println("\nRacine carree");
-            setInputValue("V");
-            break;
-        case "H":
-            System.out.println("\nHistorique ");
-            System.out.println(this.history.toString());
-            break;
-        case "E":
-            System.out.println("\nVous avez quitte l'application !");
-            System.exit(0);
-            break;
-        default:
-            System.out.println("\nChoix du menu invalide !");
-            return false;
+            case "1":
+                System.out.println("\nAddition");
+                setInputValues("+");
+                break;
+            case "2":
+                System.out.println("\nSoustraction");
+                setInputValues("-");
+                break;
+            case "3":
+                System.out.println("\nMultiplication");
+                setInputValues("*");
+                break;
+            case "4":
+                System.out.println("\nDivision");
+                setInputValues("/");
+                break;
+            case "5":
+                System.out.println("\nModulo");
+                setInputValues("%");
+                break;
+            case "6":
+                System.out.println("\nPuissance");
+                setInputValues("^");
+                break;
+            case "7":
+                System.out.println("\nRacine carree");
+                setInputValue("V");
+                break;
+            case "H":
+                System.out.println("\nHistorique ");
+                System.out.println(this.history.toString());
+                break;
+            case "E":
+                System.out.println("\nVous avez quitte l'application !");
+                System.exit(0);
+                break;
+            default:
+                System.out.println("\nChoix du menu invalide !");
+                return false;
         }
         return true;
     }
@@ -185,9 +185,8 @@ public class Navigation {
      * @param operator the sign of the operator.
      */
     public void setInputValues(final String operator) {
-       final float valueA = getValuekeyBoard("a");
-       final float valueB = getValuekeyBoard("b");
-
+        final float valueA = getValuekeyBoard("a");
+        final float valueB = getValuekeyBoard("b");
         execOperation(operator, valueA, valueB);
     }
     /**
