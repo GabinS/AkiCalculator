@@ -1,6 +1,3 @@
-/**
- *
- */
 package com.akicalculator;
 
 import org.junit.After;
@@ -19,7 +16,8 @@ public class TestModulo {
     private Modulo modulo;
 
     /**
-    * @throws java.lang.Exception
+     * Method called before each method containing a test
+    * @throws java.lang.Exception exception generated
     */
     @Before
     public void setUp() throws Exception {
@@ -27,12 +25,16 @@ public class TestModulo {
     }
 
     /**
-    * @throws java.lang.Exception
+     * Method called after each method containing a test
+    * @throws java.lang.Exception exception generated
     */
     @After
     public void tearDown() throws Exception {
     }
 
+    /**
+     * Test method for {@link com.akicalculator.models.Modulo#apply()}
+     */
     @Test
     public void testApply() {
         final float result = this.modulo.apply();

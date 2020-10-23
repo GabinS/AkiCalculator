@@ -16,7 +16,7 @@ public class History {
     /**
      * List of history operation
      */
-    private Collection<String> list;
+    private final Collection<String> list;
 
     /**
      * Default Constructor.
@@ -46,9 +46,9 @@ public class History {
 
     /**
      * Add new line in history list
-     * @param operation
+     * @param operation the operation
      */
-    public void add(String operation) {
+    public void add(final String operation) {
         this.list.add(operation);
     }
 
@@ -60,10 +60,10 @@ public class History {
         if (0 == this.list.size()) {
             history = "Aucun historique enregistré";
         } else {
-            int i = 0;
-            for (String line : this.list) {
-                history += "["+ i +"] " + line;
-                i++;
+            int lineNumber = 0;
+            for (final String line : this.list) {
+                history += "[" + lineNumber + "] " + line;
+                lineNumber++;
             }
         }
 

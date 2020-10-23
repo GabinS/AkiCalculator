@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import com.akicalculator.models.Subtraction;
 
-/***
+/**
  * Subtraction class test.
  */
 public class TestSubstraction {
@@ -17,8 +17,8 @@ public class TestSubstraction {
     private Subtraction substract;
 
     /**
-     * Init the value to subtract.
-     * @throws Exception
+     * Method called before each method containing a test
+     * @throws Exception exception generated
      */
     @Before
     public void setUp() throws Exception {
@@ -26,7 +26,7 @@ public class TestSubstraction {
     }
 
     /**
-     * Apply the subtract command.
+     * Test method for {@link com.akicalculator.models.Substraction#apply()}.
      */
     @Test
     public void testApply() {

@@ -132,7 +132,7 @@ public class Navigation {
      * Execute operation
      * @param operator sign of operation
      */
-    public void execOperation(String operator, float valueA, float valueB) {
+    public void execOperation(final String operator, final float valueA, final float valueB) {
         String resultOperation = "";
         switch (operator) {
             case "+":
@@ -160,17 +160,17 @@ public class Navigation {
                 }
                 break;
             case "%":
-                Modulo modulo = new Modulo(valueA, valueB);
+                final Modulo modulo = new Modulo(valueA, valueB);
                 modulo.apply();
                 resultOperation = modulo.getMessageOperation();
                 break;
             case "^":
-                Power power = new Power(valueA, valueB);
+                final Power power = new Power(valueA, valueB);
                 power.apply();
                 resultOperation = power.getMessageOperation();
                 break;
             case "V":
-                SquareRoot squareRoot = new SquareRoot(valueA);
+                final SquareRoot squareRoot = new SquareRoot(valueA);
                 squareRoot.apply();
                 resultOperation = squareRoot.getMessageOperation();
                 break;
@@ -187,7 +187,7 @@ public class Navigation {
      * Set input values.
      * @param operator the sign of the operator.
      */
-    public void setInputValues(String operator) {
+    public void setInputValues(final String operator) {
         final float valueA = getValuekeyBoard("a");
         final float valueB = getValuekeyBoard("b");
 
@@ -198,7 +198,7 @@ public class Navigation {
      * Set input values.
      * @param operator the sign of the operator.
      */
-    public void setInputValue(String operator) {
+    public void setInputValue(final String operator) {
         final float valueA = getValuekeyBoard("a");
         execOperation(operator, valueA, 0);
     }
