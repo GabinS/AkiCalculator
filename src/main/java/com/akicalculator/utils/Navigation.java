@@ -27,10 +27,16 @@ public class Navigation {
     private final transient History history;
 
     /**
+     * History of operation
+     */
+    private transient float memory;
+
+    /**
      * Default constructor
      */
     public Navigation() {
         this.history = History.getInstance();
+        this.memory = 0;
     }
 
     /**
@@ -47,8 +53,9 @@ public class Navigation {
         System.out.println("|    [5] Modulo            |");
         System.out.println("|    [6] Puissance         |");
         System.out.println("|    [7] Racine carree     |");
+        System.out.println("|[M] Memorisation valeur   |");
         System.out.println("|[H] Historique            |");
-        System.out.println("|[E] Exit                  |");
+        System.out.println("|[Q] Quitter               |");
         System.out.println("----------------------------");
     }
 
@@ -100,11 +107,17 @@ public class Navigation {
                 System.out.println("\nRacine carree");
                 setInputValue("V");
                 break;
+            case "M":
+                System.out.println("\nMemorisation valeur");
+                System.out.println("Vous pourrez utiliser la touche M pour utiliser "
+                        + "la valeur enregistree lors de vos prochains calcules");
+                //this.saveValueMemory();
+                break;
             case "H":
                 System.out.println("\nHistorique ");
                 System.out.println(this.history.toString());
                 break;
-            case "E":
+            case "Q":
                 System.out.println("\nVous avez quitte l'application !");
                 System.exit(0);
                 break;
@@ -122,7 +135,14 @@ public class Navigation {
      */
     public float getValuekeyBoard(final String letter) {
         System.out.print(letter + " = ");
-        final float value = SCAN.nextFloat();
+        String valueStr = SCAN.next();
+        float value = 0;
+        if (valueStr.equals("M")) {
+            value = this.memory;
+        } else {
+            valueStr = valueStr.replace(',', '.');
+            value = Float.parseFloat(valueStr);
+        }
         return value;
     }
 
@@ -201,6 +221,13 @@ public class Navigation {
     public void setInputValue(final String operatorOneValue) {
         final float valueA = getValuekeyBoard("a");
         execOperation(operatorOneValue, valueA, 0);
+    }
+
+    /**
+     * Save memory value
+     */
+    public void saveValueMemory() {
+        this.memory = getValuekeyBoard("M");
     }
 
 
