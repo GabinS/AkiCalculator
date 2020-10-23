@@ -11,7 +11,7 @@ public class Multiplication extends Operation {
      * @param secondValue of operation
      */
     public Multiplication(final float firstValue, final float secondValue) {
-        super(firstValue, secondValue);
+        super(firstValue, secondValue, "*");
     }
 
     /**

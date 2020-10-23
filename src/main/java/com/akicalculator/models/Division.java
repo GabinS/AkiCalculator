@@ -11,7 +11,7 @@ public class Division extends Operation {
      * @param secondValue of operation
      */
     public Division(final float firstValue, final float secondValue) {
-        super(firstValue, secondValue);
+        super(firstValue, secondValue, "/");
     }
 
     /**
@@ -20,8 +20,9 @@ public class Division extends Operation {
      */
     public float apply() {
         this.result = 0;
-        if (0.0f != this.secondValue) {
+        if (0 != this.secondValue) {
             this.result = this.firstValue / this.secondValue;
+            System.out.println("Impossible de faire une division par 0");
         }
         return this.result;
     }

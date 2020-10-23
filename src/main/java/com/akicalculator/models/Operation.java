@@ -3,7 +3,7 @@ package com.akicalculator.models;
 /**
  * Operation
  */
-public class Operation {
+public class Operation implements Command {
 
     /**
      * First value
@@ -21,14 +21,32 @@ public class Operation {
     protected transient float result;
 
     /**
+     * Operator
+     */
+    protected transient String operator;
+
+    /**
      * Default Constructor.
      * @param firstValue of operation
      * @param secondValue of operation
      */
-    public Operation(final float firstValue, final float secondValue) {
+    public Operation(final float firstValue, final float secondValue, final String operator) {
         this.firstValue = firstValue;
         this.secondValue = secondValue;
+        this.operator = operator;
         this.result = 0;
 
+    }
+
+    @Override
+    public float apply() {
+        return 0;
+    }
+
+    /**
+     * Get operation in console
+     */
+    public String getMessageOperation() {
+        return this.firstValue + " " + this.operator + " " + this.secondValue + " = " + this.result + "\n";
     }
 }

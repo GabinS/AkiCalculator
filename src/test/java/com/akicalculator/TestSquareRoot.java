@@ -5,41 +5,40 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.akicalculator.models.Addition;
+import com.akicalculator.models.SquareRoot;
 
 /**
- * @author gabz9
+ * @author Joris Guerrier
  *
  */
-public class TestAddition {
+public class TestSquareRoot {
 
-    private Addition add;
+    private SquareRoot square;
 
     /**
      * Method called before each method containing a test
-     * @throws java.lang.Exception Exception generated
+     * @throws java.lang.Exception exception generated
      */
     @Before
     public void setUp() throws Exception {
-        this.add = new Addition(3, 4);
+        this.square = new SquareRoot(9);
     }
 
     /**
      * Method called after each method containing a test
-     * @throws java.lang.Exception Exception generated
+     * @throws java.lang.Exception exception generated
      */
     @After
     public void tearDown() throws Exception {
     }
 
     /**
-     * Test method for {@link com.akicalculator.models.Addition#apply()}
+     * Test method for {@link com.akicalculator.models.SquareRoot#apply()}.
      */
     @Test
     public void testApply() {
-        final float result = this.add.apply();
+        final float result = this.square.apply();
 
-        Assert.assertEquals(7.0f, result, 0.0f);
+        Assert.assertEquals(3.0f, result, 0.0f);
     }
-
 }

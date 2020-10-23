@@ -5,41 +5,40 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.akicalculator.models.Addition;
+import com.akicalculator.models.Power;
 
 /**
- * @author gabz9
- *
+ * Power test class.
  */
-public class TestAddition {
+public class TestPower {
 
-    private Addition add;
+    private Power power;
 
     /**
      * Method called before each method containing a test
-     * @throws java.lang.Exception Exception generated
-     */
+    * @throws java.lang.Exception exception generated
+    */
     @Before
     public void setUp() throws Exception {
-        this.add = new Addition(3, 4);
+        this.power = new Power(2, 3);
     }
 
     /**
      * Method called after each method containing a test
-     * @throws java.lang.Exception Exception generated
-     */
+    * @throws java.lang.Exception exception generated
+    */
     @After
     public void tearDown() throws Exception {
     }
 
     /**
-     * Test method for {@link com.akicalculator.models.Addition#apply()}
+     * Test method for {@link com.akicalculator.models.Power#apply()}
      */
     @Test
     public void testApply() {
-        final float result = this.add.apply();
+        final float result = this.power.apply();
 
-        Assert.assertEquals(7.0f, result, 0.0f);
+        Assert.assertEquals(8.0f, result, 0.0f);
     }
 
 }

@@ -13,7 +13,7 @@ public class Application {
     public static void main(final String[] args) {
         while (true) {
             System.out.flush();
-            Navigation navigation = new Navigation();
+            final Navigation navigation = new Navigation();
             navigation.printMenu();
             navigation.start();
         }
