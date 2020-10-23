@@ -129,6 +129,8 @@ public class Navigation {
     /**
      * Execute operation
      * @param operator sign of operation
+     * @param valueA first value
+     * @param valueB second value
      */
     @SuppressWarnings({"PMD.DataflowAnomalyAnalysis","PMD.CyclomaticComplexity", "PMD.StdCyclomaticComplexity"})
     public void execOperation(final String operator, final float valueA, final float valueB) {

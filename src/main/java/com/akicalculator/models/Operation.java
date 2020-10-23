@@ -29,6 +29,7 @@ public class Operation implements Command {
      * Default Constructor.
      * @param firstValue of operation
      * @param secondValue of operation
+     * @param operator the sign of the operator
      */
     public Operation(final float firstValue, final float secondValue, final String operator) {
         this.firstValue = firstValue;
@@ -45,6 +46,7 @@ public class Operation implements Command {
 
     /**
      * Get operation in console
+     * @return the operation
      */
     public String getMessageOperation() {
         return this.firstValue + " " + this.operator + " " + this.secondValue + " = " + this.result + "\n";

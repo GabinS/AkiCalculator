@@ -38,7 +38,7 @@ public class History {
 
     /**
      * Get list of history
-     * @return
+     * @return the list of history
      */
     public Collection<String> getList() {
         return list;
