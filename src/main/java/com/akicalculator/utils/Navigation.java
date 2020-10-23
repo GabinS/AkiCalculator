@@ -5,11 +5,11 @@ import java.util.Scanner;
 import com.akicalculator.models.Addition;
 import com.akicalculator.models.Division;
 import com.akicalculator.models.History;
-import com.akicalculator.models.Modulo;
 import com.akicalculator.models.Multiplication;
+import com.akicalculator.models.Subtraction;
+import com.akicalculator.models.Modulo;
 import com.akicalculator.models.Power;
 import com.akicalculator.models.SquareRoot;
-import com.akicalculator.models.Subtraction;
 
 /**
  * Navigation for menu
@@ -24,7 +24,7 @@ public class Navigation {
     /**
      * History of operation
      */
-    private final History history;
+    private transient final History history;
 
     /**
      * Default constructor
@@ -57,64 +57,61 @@ public class Navigation {
      */
     public void start() {
         Boolean validMenu = false;
-
-
         while (!validMenu) {
             System.out.print("Choix du menu : ");
             final String menuSelected = SCAN.next();
-
-            switch (menuSelected) {
-                case "1":
-                    System.out.println("\nAddition");
-                    validMenu = true;
-                    setInputValues("+");
-                    break;
-                case "2":
-                    System.out.println("\nSoustraction");
-                    validMenu = true;
-                    setInputValues("-");
-                    break;
-                case "3":
-                    System.out.println("\nMultiplication");
-                    validMenu = true;
-                    setInputValues("*");
-                    break;
-                case "4":
-                    System.out.println("\nDivision");
-                    validMenu = true;
-                    setInputValues("/");
-                    break;
-                case "5":
-                    System.out.println("\nModulo");
-                    validMenu = true;
-                    setInputValues("%");
-                    break;
-                case "6":
-                    System.out.println("\nPuissance");
-                    validMenu = true;
-                    setInputValues("^");
-                    break;
-                case "7":
-                    System.out.println("\nRacine carree");
-                    validMenu = true;
-                    setInputValue("V");
-                    break;
-                case "H":
-                    System.out.println("\nHistorique ");
-                    validMenu = true;
-                    System.out.println(this.history.toString());
-                    break;
-                case "E":
-                    System.out.println("\nVous avez quitte l'application !");
-                    validMenu = true;
-                    System.exit(0);
-                    break;
-
-                default:
-                    System.out.println("\nChoix du menu invalide !");
-                    break;
-            }
+            validMenu = this.selectMenu(menuSelected);
         }
+    }
+
+    /**
+     * Select Menu
+     * @param menuSelected
+     * @return true if menu selected is valid
+     */
+    public Boolean selectMenu(final String menuSelected) {
+        switch (menuSelected) {
+        case "1":
+            System.out.println("\nAddition");
+            setInputValues("+");
+            break;
+        case "2":
+            System.out.println("\nSoustraction");
+            setInputValues("-");
+            break;
+        case "3":
+            System.out.println("\nMultiplication");
+            setInputValues("*");
+            break;
+        case "4":
+            System.out.println("\nDivision");
+            setInputValues("/");
+            break;
+        case "5":
+            System.out.println("\nModulo");
+            setInputValues("%");
+            break;
+        case "6":
+            System.out.println("\nPuissance");
+            setInputValues("^");
+            break;
+        case "7":
+            System.out.println("\nRacine carree");
+            setInputValue("V");
+            break;
+        case "H":
+            System.out.println("\nHistorique ");
+            System.out.println(this.history.toString());
+            break;
+        case "E":
+            System.out.println("\nVous avez quitte l'application !");
+            System.exit(0);
+            break;
+        default:
+            System.out.println("\nChoix du menu invalide !");
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -151,7 +148,7 @@ public class Navigation {
                 resultOperation = multiplication.getMessageOperation();
                 break;
             case "/":
-                if (0.0f != valueB) {
+                if (0 != valueB) {
                     final Division division = new Division(valueA, valueB);
                     division.apply();
                     resultOperation = division.getMessageOperation();
@@ -188,12 +185,11 @@ public class Navigation {
      * @param operator the sign of the operator.
      */
     public void setInputValues(final String operator) {
-        final float valueA = getValuekeyBoard("a");
-        final float valueB = getValuekeyBoard("b");
+       final float valueA = getValuekeyBoard("a");
+       final float valueB = getValuekeyBoard("b");
 
         execOperation(operator, valueA, valueB);
     }
-
     /**
      * Set input values.
      * @param operator the sign of the operator.
