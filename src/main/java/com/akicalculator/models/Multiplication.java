@@ -7,11 +7,11 @@ public class Multiplication extends Operation {
 
     /**
      * Default Constructor.
-     * @param firstValue of operation
-     * @param secondValue of operation
+     * @param firstValueMul of operation
+     * @param secondValueMul of operation
      */
-    public Multiplication(final float firstValue, final float secondValue) {
-        super(firstValue, secondValue, "*");
+    public Multiplication(final float firstValueMul, final float secondValueMul) {
+        super(firstValueMul, secondValueMul, "*");
     }
 
     /**

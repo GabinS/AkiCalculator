@@ -9,7 +9,9 @@ public class Application {
 
     /**
      * Entry-point of application.
+     * @param args arguments
      */
+    @SuppressWarnings("PMD.AvoidInstantiatingObjectsInLoops")
     public static void main(final String[] args) {
         while (true) {
             System.out.flush();

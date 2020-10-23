@@ -7,11 +7,11 @@ public class Addition extends Operation {
 
     /**
      * Default Constructor.
-     * @param firstValue of operation
-     * @param secondValue of operation
+     * @param firstValueAdd of operation
+     * @param secondValueAdd of operation
      */
-    public Addition(final float firstValue, final float secondValue) {
-        super(firstValue, secondValue, "+");
+    public Addition(final float firstValueAdd, final float secondValueAdd) {
+        super(firstValueAdd, secondValueAdd, "+");
     }
 
     /**

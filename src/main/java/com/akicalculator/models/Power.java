@@ -7,11 +7,11 @@ public class Power extends Operation {
 
     /**
      * Default Constructor.
-     * @param firstValue of operation
-     * @param secondValue of operation
+     * @param firstValuePow of operation
+     * @param secondValuePow of operation
      */
-    public Power(final float firstValue, final float secondValue) {
-        super(firstValue, secondValue, "^");
+    public Power(final float firstValuePow, final float secondValuePow) {
+        super(firstValuePow, secondValuePow, "^");
     }
 
     /**

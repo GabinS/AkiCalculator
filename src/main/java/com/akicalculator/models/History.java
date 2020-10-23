@@ -38,7 +38,7 @@ public class History {
 
     /**
      * Get list of history
-     * @return
+     * @return the list of history
      */
     public Collection<String> getList() {
         return list;
@@ -55,19 +55,20 @@ public class History {
     /**
      * Return list of history
      */
+    @SuppressWarnings("PMD.DataflowAnomalyAnalysis")
     public String toString() {
-        String history = "";
+        final StringBuilder history = new StringBuilder("");
         if (0 == this.list.size()) {
-            history = "Aucun historique enregistré";
+            history.append(" Aucun historique enregistré");
         } else {
             int lineNumber = 0;
             for (final String line : this.list) {
-                history += "[" + lineNumber + "] " + line;
+                history.append("[" + lineNumber + "] " + line);
                 lineNumber++;
             }
         }
 
-        return history;
+        return (String) history.toString();
     }
 
 }
