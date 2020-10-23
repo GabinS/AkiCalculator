@@ -189,6 +189,7 @@ public class Navigation {
         final float valueB = getValuekeyBoard("b");
         execOperation(operator, valueA, valueB);
     }
+
     /**
      * Set input values.
      * @param operator the sign of the operator.
