@@ -184,7 +184,7 @@ public class Navigation {
 
     /**
      * Set input values.
-     * @param operator the sign of the operator.
+     * @param operatorTwoValues the sign of the operator.
      */
     public void setInputValues(final String operatorTwoValues) {
         final float valueA = getValuekeyBoard("a");
@@ -194,7 +194,7 @@ public class Navigation {
 
     /**
      * Set input values.
-     * @param operator the sign of the operator.
+     * @param operatorOneValue the sign of the operator.
      */
     public void setInputValue(final String operatorOneValue) {
         final float valueA = getValuekeyBoard("a");
