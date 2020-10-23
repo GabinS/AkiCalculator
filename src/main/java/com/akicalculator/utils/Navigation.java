@@ -110,7 +110,7 @@ public class Navigation {
             case "M":
                 System.out.println("\nMemorisation valeur");
                 System.out.println("Vous pourrez utiliser la touche M pour utiliser "
-                        + "la valeur enregistree lors de vos prochains calcules");
+                        + "la valeur enregistree lors de vos prochains calculs");
                 //this.saveValueMemory();
                 break;
             case "H":
