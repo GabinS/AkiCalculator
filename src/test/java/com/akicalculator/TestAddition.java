@@ -1,6 +1,3 @@
-/**
- *
- */
 package com.akicalculator;
 
 import org.junit.After;
@@ -19,7 +16,8 @@ public class TestAddition {
     private Addition add;
 
     /**
-     * @throws java.lang.Exception
+     * Method called before each method containing a test
+     * @throws java.lang.Exception Exception generated
      */
     @Before
     public void setUp() throws Exception {
@@ -27,12 +25,16 @@ public class TestAddition {
     }
 
     /**
-     * @throws java.lang.Exception
+     * Method called after each method containing a test
+     * @throws java.lang.Exception Exception generated
      */
     @After
     public void tearDown() throws Exception {
     }
 
+    /**
+     * Test method for {@link com.akicalculator.models.Addition#apply()}
+     */
     @Test
     public void testApply() {
         final float result = this.add.apply();

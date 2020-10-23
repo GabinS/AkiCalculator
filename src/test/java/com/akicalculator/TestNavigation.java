@@ -1,14 +1,8 @@
-/**
- *
- */
 package com.akicalculator;
 
-import static org.junit.Assert.*;
-
 import org.junit.After;
-import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.akicalculator.utils.Navigation;
@@ -22,21 +16,8 @@ public class TestNavigation {
     private Navigation nav;
 
     /**
-     * @throws java.lang.Exception
-     */
-    @BeforeClass
-    public static void setUpBeforeClass() throws Exception {
-    }
-
-    /**
-     * @throws java.lang.Exception
-     */
-    @AfterClass
-    public static void tearDownAfterClass() throws Exception {
-    }
-
-    /**
-     * @throws java.lang.Exception
+     * Method called before each method containing a test
+     * @throws java.lang.Exception exception generated
      */
     @Before
     public void setUp() throws Exception {
@@ -44,7 +25,8 @@ public class TestNavigation {
     }
 
     /**
-     * @throws java.lang.Exception
+     * Method called after each method containing a test
+     * @throws java.lang.Exception exception generated
      */
     @After
     public void tearDown() throws Exception {
@@ -83,7 +65,7 @@ public class TestNavigation {
     }
 
     /**
-     * Test method for {@link com.akicalculator.utils.Navigation#getMessageOperation(float, float, float, java.lang.String)}.
+     * Test method for {@link com.akicalculator.utils.Navigation#getMessageOperation(float, float, float, String)}.
      */
     @Test
     public void testGetMessageOperation() {
@@ -103,7 +85,6 @@ public class TestNavigation {
         this.nav.execOperation("%", 4, 2);
         this.nav.execOperation("^", 4, 2);
         this.nav.execOperation("V", 4, 2);
-
 
     }
 
