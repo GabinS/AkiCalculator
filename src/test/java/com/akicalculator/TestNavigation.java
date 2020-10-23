@@ -86,9 +86,12 @@ public class TestNavigation {
         this.nav.execOperation("-", 4, 2);
         this.nav.execOperation("*", 4, 2);
         this.nav.execOperation("/", 4, 2);
+        this.nav.execOperation("/", 4, 0);
         this.nav.execOperation("%", 4, 2);
         this.nav.execOperation("^", 4, 2);
         this.nav.execOperation("V", 4, 2);
+
+        this.nav.execOperation("x", 4, 2);
 
     }
 

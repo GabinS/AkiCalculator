@@ -42,7 +42,7 @@ public class TestHistory {
      */
     @Test
     public void testToStringAfterAdd() {
-        this.history.toString();
+        assertTrue("" != this.history.toString());
     }
 
 }
