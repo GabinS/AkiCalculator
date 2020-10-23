@@ -69,6 +69,7 @@ public class Navigation {
      * @param menuSelected menu selection
      * @return true if menu selected is valid
      */
+    @SuppressWarnings({"PMD.CyclomaticComplexity", "PMD.StdCyclomaticComplexity"})
     public Boolean selectMenu(final String menuSelected) {
         switch (menuSelected) {
             case "1":
@@ -129,6 +130,7 @@ public class Navigation {
      * Execute operation
      * @param operator sign of operation
      */
+    @SuppressWarnings({"PMD.DataflowAnomalyAnalysis","PMD.CyclomaticComplexity", "PMD.StdCyclomaticComplexity"})
     public void execOperation(final String operator, final float valueA, final float valueB) {
         String resultOperation = "";
         switch (operator) {
